@@ -1,0 +1,280 @@
+﻿<Page x:Class="MainProject.EmployeePanelFiles.Pages.OrderInfo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFModernVerticalMenu.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      
+      
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
+        <StackPanel>
+            <Grid Margin="10 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox Grid.Column="0" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                     materialDesign:HintAssist.Hint="ID: "
+                                     materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     Foreground="White"
+                                     BorderBrush="#c5c8cc"
+                                     BorderThickness="0 0 0 1.5"
+                                     />
+
+                <Button Grid.Column="1" Width="100" Margin="-100 0 0 0"  Style="{StaticResource MaterialDesignFlatButton}">
+
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon
+            Kind="Magnify" 
+            VerticalAlignment="Center"
+            Margin="0,0,0,0"
+            />
+                        <TextBlock Text="Search" VerticalAlignment="Center" Width="51"/>
+                    </StackPanel>
+                </Button>
+
+
+
+
+
+
+                <TextBox Grid.Column="2" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                     materialDesign:HintAssist.Hint="Sender National Code: "
+                                     materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     Foreground="White"
+                                     BorderBrush="#c5c8cc"
+                                     BorderThickness="0 0 0 1.5"
+                                     />
+            </Grid>
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0"  Grid.ColumnSpan="2">
+
+                    <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                     materialDesign:HintAssist.Hint="Sender Address: "
+                                     materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     Foreground="White"
+                                     BorderBrush="#c5c8cc"
+                                     BorderThickness="0 0 0 1.5"
+                                     
+                                     />
+                    <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                     materialDesign:HintAssist.Hint="Receiver Address: "
+                                     Margin="0 30"
+                                     materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     Foreground="White"
+                                     BorderBrush="#c5c8cc"
+                                     BorderThickness="0 0 0 1.5"
+                                     />
+                  
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                     materialDesign:HintAssist.Hint="Weight: "
+                                     materialDesign:HintAssist.FloatingHintHorizontalAlignment="Center"
+                                    
+                                     TextAlignment="Center"
+                                   
+                                     materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     Foreground="White"
+                                     BorderBrush="#c5c8cc"
+                                     BorderThickness="0 0 0 1.5" Margin="0,0,97,0"
+                                     />
+                            <CheckBox Grid.Column="1" HorizontalAlignment="Right" Content="is Expensive" Foreground="White" FontWeight="Bold" Width="115">
+                                <CheckBox.Style>
+                                    <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource MaterialDesignCheckBox}">
+                                        <Setter Property="FontSize" Value="16" />
+                                        <Setter Property="Margin" Value="10" />
+                                    </Style>
+                                </CheckBox.Style>
+                            </CheckBox>
+                        </Grid>
+
+                       
+              
+
+
+                </StackPanel>
+                <StackPanel Grid.Column="2" Grid.ColumnSpan="2" Margin="10">
+
+                    <ComboBox  Grid.Row="0" Style="{StaticResource MaterialDesignOutlinedComboBox}" VerticalAlignment="Center" materialDesign:HintAssist.Hint="Content Type :" Background="{DynamicResource SecundaryBackgroundColor}" Foreground="White">
+                        <ComboBoxItem Foreground="Black"  Content="Aliefffffffffffffffffffffffffffffffff" />
+                        <ComboBoxItem Foreground="Black"  Content="B" />
+                        <ComboBoxItem Foreground="Black"  Content="C" />
+                    </ComboBox>
+                    <ComboBox Margin="0 20" Style="{StaticResource MaterialDesignOutlinedComboBox}" materialDesign:HintAssist.Hint="Content Type :" Background="{DynamicResource SecundaryBackgroundColor}" Foreground="White" >
+                        <ComboBoxItem Foreground="Black"  Content="Aliefffffffffffffffffffffffffffffffff" />
+                        <ComboBoxItem Foreground="Black"  Content="B" />
+                        <ComboBoxItem Foreground="Black"  Content="C" />
+                    </ComboBox>
+
+
+                </StackPanel>
+
+
+
+
+            </Grid>
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" FontSize="20" Content="Status : "></Label>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+
+                        <RadioButton Margin="20" Content="Submitted" GroupName="Options"   />
+                        <RadioButton Margin="20 0" Content="Ready to Send" GroupName="Options"  />
+
+
+                    </StackPanel>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal">
+                        <RadioButton Margin="20 0" Content="Sending" GroupName="Options"  />
+                        <RadioButton Margin="32 0" Content="Delivered" GroupName="Options"  />
+                    </StackPanel>
+
+                    <Button Grid.Row="3" Content="Update" RenderTransformOrigin="0.144,-1.452" Margin="10,10,10,0"/>
+
+
+                </Grid>
+
+
+
+
+
+
+
+
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Content="Customer Cumment" Margin="0,10,0,10"></Label>
+                    <TextBlock Grid.Row="1" Grid.RowSpan="2" Background="White" Margin="0,0,0,-22" ></TextBlock>
+
+                </Grid>
+
+
+
+
+            </Grid>
+
+
+
+
+            <!--<Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="0.1*"/>
+                    <ColumnDefinition/>
+
+
+                </Grid.ColumnDefinitions>
+               
+
+
+
+
+
+            </Grid>
+
+
+
+
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+
+
+
+
+                <ComboBox Grid.Row="0" Margin="10" Style="{StaticResource MaterialDesignOutlinedComboBox}" VerticalAlignment="Center" materialDesign:HintAssist.Hint="Content Type :" Background="{DynamicResource SecundaryBackgroundColor}" Foreground="White">
+                    <ComboBoxItem Foreground="Black"  Content="Aliefffffffffffffffffffffffffffffffff" />
+                    <ComboBoxItem Foreground="Black"  Content="B" />
+                    <ComboBoxItem Foreground="Black"  Content="C" />
+                </ComboBox>
+                <CheckBox Grid.Column="1" Margin="10" Content="is Expensive" Foreground="White" FontWeight="Bold">
+                    <CheckBox.Style>
+                        <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource MaterialDesignCheckBox}">
+                            <Setter Property="FontSize" Value="16" />
+                            <Setter Property="Margin" Value="10" />
+                        </Style>
+                    </CheckBox.Style>
+                </CheckBox>
+
+            </Grid>
+
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="0.01*"/>
+
+                    <ColumnDefinition  />
+                    
+                </Grid.ColumnDefinitions>
+                <ComboBox Style="{StaticResource MaterialDesignOutlinedComboBox}" materialDesign:HintAssist.Hint="Content Type :" Background="{DynamicResource SecundaryBackgroundColor}" Foreground="White" Margin="0,0,136,0">
+                    <ComboBoxItem Foreground="Black"  Content="Aliefffffffffffffffffffffffffffffffff" />
+                    <ComboBoxItem Foreground="Black"  Content="B" />
+                    <ComboBoxItem Foreground="Black"  Content="C" />
+                </ComboBox>
+                <TextBox Margin="457,-4,172,4" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                     materialDesign:HintAssist.Hint="Receiver Address: "
+                                     
+                                    
+                                     materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     Foreground="White"
+                                     BorderBrush="#c5c8cc"
+                                     BorderThickness="0 0 0 1.5" Grid.ColumnSpan="3"
+                                     />
+
+
+            </Grid>-->
+
+
+
+
+
+
+
+
+
+
+
+        </StackPanel>
+
+    </Border>
+</Page>
