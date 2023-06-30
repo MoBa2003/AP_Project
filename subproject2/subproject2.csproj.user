@@ -7,7 +7,57 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="AddCustomerPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AddOrderPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="AdvancedSearchPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ChangeAccountCredentials.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CustomerAdvancedSearch.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="CustomerWallet.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="IDSearch.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="SeeBoxInfo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AddCustomerPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AddOrderPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="AdvancedSearchPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ChangeAccountCredentials.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CustomerAdvancedSearch.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CustomerWallet.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="IDSearch.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="SeeBoxInfo.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

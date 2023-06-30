@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Ali\Desktop\subproject2\subproject2\obj\Debug\net6.0-windows\
+C:\Users\Ali\Desktop\subproject2\AP_Project\subproject2\obj\Debug\net6.0-windows\
 subproject2
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\Ali\Desktop\subproject2\subproject2\App.xaml
-11407045341
+C:\Users\Ali\Desktop\subproject2\AP_Project\subproject2\App.xaml
+9710807336
 
-51531433439
-194237474483
-MainWindow.xaml;
+13-694034096
+195-1316312720
+AddCustomerPage.xaml;AddOrderPage.xaml;AdvancedSearchPage.xaml;ChangeAccountCredentials.xaml;CustomerAdvancedSearch.xaml;CustomerWallet.xaml;IDSearch.xaml;MainWindow.xaml;SeeBoxInfo.xaml;
 
-False
+True
 

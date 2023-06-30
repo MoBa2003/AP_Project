@@ -14,11 +14,11 @@
 
         <Border Grid.Column="0" Name="buttonpanel" Visibility="Collapsed" Background="LightBlue">
             <StackPanel>
-                <Button VerticalAlignment="Top" Margin="20,110,20,40" Background="#3E454C" Height="50px" Foreground="White" Name="UserLogin" Click="UserLogin_Click">User Login</Button>
-                <Button Margin="20,20,20,40" Background="#3E454C" Height="50px" Foreground="White" Name="AddEmployee" Click="AddEmployee_Click">Add Employee</Button>
+                <Button Margin="20,110,20,40" Background="#3E454C" Height="60" Foreground="White" Name="UserLogin" Click="UserLogin_Click">User Login</Button>
+                <Button Margin="20,20,20,40" Background="#3E454C" Height="60" Foreground="White" Name="AddEmployee" Click="AddEmployee_Click">Add Employee</Button>
             </StackPanel>
         </Border>
-        <Border Grid.Column="1" Visibility="Collapsed" Background="#EFA82D" Name="UserLoginPanel">
+        <Border Grid.Column="1" Visibility="Visible" Background="#EFA82D" Name="UserLoginPanel">
             <StackPanel Orientation="Vertical" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Center" >
                 <Border CornerRadius="25" Margin="20,100,20,10"  BorderBrush="Red" Background="White" Width="330">
                     <StackPanel Orientation="Vertical" Margin="-10,0,10,0">
@@ -105,7 +105,7 @@
                 <Button Margin="20,20,20,20" Background="#3E454C" Height="50px" Foreground="White" Name="btn_Employeeback" Click="btn_Employeeback_Click">Back</Button>
             </StackPanel>
         </Border>
-        <Border Grid.Column="1" Background="#EFA82D" Visibility="Collapsed" Name="AddCustomerPanel">
+        <Border Grid.Column="1" Background="#EFA82D" Visibility="Visible" Name="AddCustomerPanel">
             <StackPanel Orientation="Vertical" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Center" >
                 <Border BorderThickness="10" Margin="20,70,20,10"  BorderBrush="Black" Background="White" Width="330">
                     <StackPanel Orientation="Vertical" Margin="-10,0,10,0">
@@ -147,7 +147,7 @@
                 </Border>
             </StackPanel>
         </Border>
-        <Border Grid.Column="1" Background="#EFA82D" Name="AddOrderPanelFirstPage" Visibility="Visible">
+        <Border Grid.Column="1" Background="#EFA82D" Name="AddOrderPanelFirstPage" Visibility="Collapsed">
             <StackPanel Orientation="Vertical" Margin="2" VerticalAlignment="Stretch" HorizontalAlignment="Center" >
                 <Border Margin="20,100,20,10" Background="SkyBlue" Width="330">
                     <StackPanel Orientation="Vertical" Margin="-10,0,10,0">
@@ -174,13 +174,37 @@
             </StackPanel>
         </Border>
         <Border Grid.Column="1" Background="#EFA82D" Name="AddOrderPanelSecondPage" Visibility="Collapsed">
+            <Grid x:Name="grid_ordering" Grid.Column="1" Visibility="Visible">
+                <TextBox HorizontalAlignment="Right" Margin="0,47,20,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="29" Background="AliceBlue"/>
+                <TextBox HorizontalAlignment="Left" Margin="41,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="29" Background="AliceBlue"/>
+                <ComboBox HorizontalAlignment="Left" Margin="41,121,0,0" VerticalAlignment="Top" Width="218" Height="30" Background="Blue">
+                    <CheckBox Content="Object"/>
+                    <CheckBox Content="Document"/>
+                    <CheckBox Content="breackable"/>
+                </ComboBox>
+                <CheckBox Content="Expensive" HorizontalAlignment="Left" Margin="41,242,0,0" VerticalAlignment="Top" Height="25" Width="109" FontSize="16" IsChecked="False"/>
+                <TextBox HorizontalAlignment="Right" Margin="0,121,20,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="218" Height="30" Background="White"/>
+                <ComboBox HorizontalAlignment="Left" Margin="41,207,0,0" VerticalAlignment="Top" Width="129" Height="23" BorderBrush="#FFFF7B00" Foreground="#FFFF7B00" Background="#FF181615">
+                    <CheckBox Content="usuall"/>
+                    <CheckBox Content="VIP"/>
+                </ComboBox>
+                <TextBlock HorizontalAlignment="Left" Margin="115,304,0,0" VerticalAlignment="Top" Height="29" Width="144" Background="White"/>
+                <TextBlock HorizontalAlignment="Left" Margin="41,301,0,0" Text="Total : " VerticalAlignment="Top" Height="32" Width="65" Foreground="#FF0B821D" FontSize="24"/>
+                <Button Content="Calculation" HorizontalAlignment="Left" Margin="488,416,0,0" VerticalAlignment="Top" Height="45" Width="91" Background="#FF181615"  Foreground="OrangeRed" FontSize="14" />
+                <Button Content="Submit" HorizontalAlignment="Left" Margin="591,416,0,0" VerticalAlignment="Top" Height="45" Width="78" Background="#FFFF7B00" Foreground="Azure" FontSize="16"/>
+                <TextBlock HorizontalAlignment="Left" Margin="517,81,0,0" Text="Weigh" VerticalAlignment="Top" Height="35" Width="79" FontSize="24"></TextBlock>
+                <TextBlock HorizontalAlignment="Right" Margin="0,10,70,0" Text="Reciever" VerticalAlignment="Top" Height="32" Width="109" FontSize="24" Foreground="Aqua"></TextBlock>
+                <TextBlock HorizontalAlignment="Left" Margin="110,10,0,0" Text="Sender" VerticalAlignment="Top" Height="28" Width="109" FontSize="24" Foreground="Aqua"></TextBlock>
+                <TextBlock HorizontalAlignment="Left" Margin="80,163,0,0" Text="Type" VerticalAlignment="Top" Height="39" Width="52" FontSize="24" Foreground="Aqua"></TextBlock>
+                <TextBlock HorizontalAlignment="Left" Margin="60,81,0,0"  Text="Package Content" VerticalAlignment="Top" Height="35" Width="217" FontSize="24" Foreground="MediumPurple"></TextBlock>
 
+            </Grid>
         </Border>
         <Border Grid.Column="1" Background="#EFA82D" Name="AdvancedSearchPanel" Visibility="Collapsed">
 
         </Border>
         <Border Grid.Column="1" Background="#EFA82D" Name="IDSearch" Visibility="Collapsed">
-
+            
         </Border>
     </Grid>
 </Window>
