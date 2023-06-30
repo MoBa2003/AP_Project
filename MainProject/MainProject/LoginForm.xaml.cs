@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MainProject.Controller;
+using MainProject.Models;
+using Npgsql;
 
 namespace MainProject
 {
@@ -37,11 +40,43 @@ namespace MainProject
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            Username_err.Content = "";
+            password_err.Content = "";
+            txtUser.BorderBrush = new SolidColorBrush(Colors.DarkGray);
+            txtPass.BorderBrush = new SolidColorBrush(Colors.DarkGray);
+            if (string.IsNullOrEmpty(txtUser.Text))
+            {
+                Username_err.Content = "Username Invalid";
+                txtUser.BorderBrush = new SolidColorBrush(Colors.Red);
+            }
+            else if (string.IsNullOrEmpty(txtPass.Password))
+            {
+                password_err.Content = "Password Invalid";
+                txtPass.BorderBrush = new SolidColorBrush(Colors.Red);
+            }
 
+            //Employee em = dbFunctions.getEmployeeByUsernamePassword(txtUser.Text, txtPass.Password);
+            //MessageBox.Show(em.Email);
+
+            //dbConnection connection = new dbConnection();
+            //NpgsqlDataReader reader = connection.ExecuteQuery($"select * from tbl_employee where username='{txtUser.Text}' and password='{txtPass.Password}'");
+            //MessageBox.Show(reader.Read().ToString());
+            ////Employee result = new Employee(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetString(6));
+            ////reader.Close();
+
+        }
+
+        private void btn_signupemployee_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            
+            SignUp_Employee window = new SignUp_Employee();
+            window.Show();
+            this.Close();
         }
     }
 }

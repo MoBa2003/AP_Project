@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "rHUfjnv29RkBpwM/tidc42PlxMvZEsbd9EJaQxckKvu2S6pQa7Hx1AI/P0wEK0fMR0aA0Dv7pohhMedTNIORvQ==",
+  "dgSpecHash": "bhgxMrpyXYPV/6i/7D7JaRA1S2GkcLBSSFWpeXdm9sR7Dur71GEE8DixK2IGK9Q6bknMuwz6ARHDTIa55cgAQw==",
   "success": true,
-  "projectFilePath": "G:\\Development\\My Courses\\C#\\ملکی مجد\\Final_Project\\AP_Project\\MainProject\\MainProject\\MainProject.csproj",
+  "projectFilePath": "C:\\Users\\Ali\\Desktop\\AP_Project-my_branch\\MainProject\\MainProject\\MainProject.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\MAM-PC\\.nuget\\packages\\materialdesigncolors\\2.1.4\\materialdesigncolors.2.1.4.nupkg.sha512",
-    "C:\\Users\\MAM-PC\\.nuget\\packages\\materialdesignthemes\\4.9.0\\materialdesignthemes.4.9.0.nupkg.sha512",
-    "C:\\Users\\MAM-PC\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+    "C:\\Users\\Ali\\.nuget\\packages\\materialdesigncolors\\2.1.4\\materialdesigncolors.2.1.4.nupkg.sha512",
+    "C:\\Users\\Ali\\.nuget\\packages\\materialdesignthemes\\4.9.0\\materialdesignthemes.4.9.0.nupkg.sha512",
+    "C:\\Users\\Ali\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Ali\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
+    "C:\\Users\\Ali\\.nuget\\packages\\npgsql\\7.0.4\\npgsql.7.0.4.nupkg.sha512",
+    "C:\\Users\\Ali\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

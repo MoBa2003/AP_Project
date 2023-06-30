@@ -174,6 +174,7 @@
                                         AlignmentX="Left"/>
                         </TextBox.Background>
                     </TextBox>
+                    <Label Margin="2" Name="Username_err" HorizontalAlignment="Right" Foreground="#FF0000"/>
 
                     <TextBlock Text="Password"
                                Foreground="DarkGray"
@@ -201,6 +202,8 @@
                                         AlignmentX="Left"/>
                         </PasswordBox.Background>
                     </PasswordBox>
+
+                    <Label Margin="2" Name="password_err" HorizontalAlignment="Right" Foreground="#FF0000"/>
 
                     <Button x:Name="btnLogin"                          
                             BorderThickness="0"
@@ -254,13 +257,15 @@
 
 
 
-                        <TextBlock Text="Sign Up Employee"
+                        <TextBlock x:Name="btn_signupemployee" Text="Sign Up Employee"
                                Foreground="White"
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Montserrat"
                                Cursor="Hand"
-                               Margin="8,0,0,0"/>
+                               Margin="8,0,0,0"
+                               MouseLeftButtonDown="btn_signupemployee_MouseLeftButtonDown"   
+                                   />
 
                     </StackPanel>
 

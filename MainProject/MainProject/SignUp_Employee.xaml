@@ -97,6 +97,17 @@
                             </materialDesign:PackIcon.Foreground>
                         </materialDesign:PackIcon>
 
+                        <Button Name="btn_signup" Content="Sign up"
+                                        Background="SkyBlue"
+                                        Foreground="#ffffff"
+                                        FontSize="18"
+                                        Width="120"
+                                        Height="45"
+                                        materialDesign:ButtonAssist.CornerRadius="22"
+                                       Margin="-5,-132,-5,197"
+                            Click="btn_signup_Click"
+                                        />
+
                     </Grid>
 
                 </Border>
@@ -128,82 +139,95 @@
                 <materialDesign:PackIcon Kind="Close" VerticalAlignment="Top" Width="20" Height="20" HorizontalAlignment="Right" Opacity="0.3" Margin="0 13 14 0" Mouse.MouseDown="PackIcon_MouseDown"/>
 
                 <StackPanel VerticalAlignment="Center" Margin="75,0,70,0" Height="558">
-                    <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                    <TextBox Name="txt_firstname" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                                      materialDesign:HintAssist.Hint="First Name : "
                                      materialDesign:HintAssist.FloatingOffset="0,-20"
-                                     
+                                     materialDesign:HintAssist.Foreground="SkyBlue"
                                      BorderBrush="#c5c8cc"
                                      BorderThickness="0 0 0 1.5"
                                      />
+                    
+                    <Label Margin="2" Name="firstname_err" FontSize="10" HorizontalAlignment="Right" Foreground="#FF0000"/>
 
-                    <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                    <TextBox Name="txt_lastname" Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                      materialDesign:HintAssist.Hint="Last Name"
                                      materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     materialDesign:HintAssist.Foreground="SkyBlue"
                                      
                                      BorderBrush="#c5c8cc"
                                      Margin="0 20"
                                      BorderThickness="0 0 0 1.5" TextChanged="TextBox_TextChanged"
                                      />
-                    <TextBox x:Name="NumericTextBox" PreviewTextInput="NumericTextBox_PreviewTextInput"
+                    
+                    <Label Margin="2" Name="lastname_err" FontSize="10" HorizontalAlignment="Right" Foreground="#FF0000"/>
+                    
+                    <TextBox Name="NumericTextBox" PreviewTextInput="NumericTextBox_PreviewTextInput"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                      materialDesign:HintAssist.Hint="Personnel Number"
                                      materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     materialDesign:HintAssist.Foreground="SkyBlue"
+                             
                                      Margin="0 7"
                                      BorderBrush="#c5c8cc"
                                      BorderThickness="0 0 0 1.5"
                              
                              />
-                    <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+
+                    <Label Margin="2" Name="personnelnumber_err" FontSize="10" HorizontalAlignment="Right" Foreground="#FF0000"/>
+
+                    <TextBox Name="txt_Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                      materialDesign:HintAssist.Hint="Email"
                                      materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     materialDesign:HintAssist.Foreground="SkyBlue"
                                      
                                      BorderBrush="#c5c8cc"
                                      Margin="0 20"
                                      BorderThickness="0 0 0 1.5"
                                      />
 
-                    <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                    <Label Margin="2" Name="Email_err" FontSize="10" HorizontalAlignment="Right" Foreground="#FF0000"/>
+                    
+                    <TextBox Name="txt_username" Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                      materialDesign:HintAssist.Hint="Username : "
                                      materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     materialDesign:HintAssist.Foreground="SkyBlue"
                                      
                                      BorderBrush="#c5c8cc"
                                      Margin="0 5"
                                      BorderThickness="0 0 0 1.5"
                                      />
 
-                    <PasswordBox Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
+                    <Label Margin="2" Name="username_err" FontSize="10" HorizontalAlignment="Right" Foreground="#FF0000"/>
+
+                    <PasswordBox Name="txt_password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
                                      
                                      materialDesign:HintAssist.Hint="Password"
                                      materialDesign:HintAssist.FloatingOffset="0,-18"
+                                     materialDesign:HintAssist.Foreground="SkyBlue"
                                     
                                      BorderBrush="#c5c8cc"
                                     Margin="0 22"
                                      BorderThickness="0 0 0 1.5"
                                      />
-                    <PasswordBox Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
+                    <Label Margin="2" Name="pass_err" FontSize="10" HorizontalAlignment="Right" Foreground="#FF0000"/>
+                    
+                    <PasswordBox Name="txt_repeatPassword" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
                                      
                                      materialDesign:HintAssist.Hint="Repeat Password"
                                      materialDesign:HintAssist.FloatingOffset="0,-18"
+                                     materialDesign:HintAssist.Foreground="SkyBlue"
                                    
                                      BorderBrush="#c5c8cc"
                                      Margin="0 5 0 0"
                                      BorderThickness="0 0 0 1.5"
                                      />
+                    <Label Margin="2" Name="passrepeat_err" FontSize="10" HorizontalAlignment="Right" Foreground="#FF0000"/>
 
 
 
 
 
-                    <Button Content="Sign up"
-                                        Background="SkyBlue"
-                                        Foreground="#ffffff"
-                                        FontSize="18"
-                                        Width="120"
-                                        Height="45"
-                                        materialDesign:ButtonAssist.CornerRadius="22"
-                                       Margin="0 20"
-                                        />
-
+                    
 
                 </StackPanel>
 
