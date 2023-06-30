@@ -5,9 +5,9 @@ G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProjec
 G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\bin\Debug\net6.0-windows\MainProject.pdb
 G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\bin\Debug\net6.0-windows\MaterialDesignColors.dll
 G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
+G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
 G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
-G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\bin\Debug\net6.0-windows\EssentialClasses.dll
-G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\bin\Debug\net6.0-windows\EssentialClasses.pdb
+G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\bin\Debug\net6.0-windows\Npgsql.dll
 G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\MainProject.csproj.AssemblyReference.cache
 G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\SignUp_Employee.baml
 G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\App.baml
@@ -21,6 +21,7 @@ G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProjec
 G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\EmployeePanelFiles\Pages\Home.g.cs
 G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\EmployeePanelFiles\Pages\Order.g.cs
 G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\EmployeePanelFiles\Pages\OrderInfo.g.cs
+G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\EmployeePanelFiles\Pages\Wallet.g.cs
 G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\LoginForm.g.cs
 G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\SignUp_Employee.g.cs
 G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\App.g.cs
@@ -38,6 +39,7 @@ G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProjec
 G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\EmployeePanelFiles\Pages\Home.baml
 G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\EmployeePanelFiles\Pages\Order.baml
 G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\EmployeePanelFiles\Pages\OrderInfo.baml
+G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\EmployeePanelFiles\Pages\Wallet.baml
 G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\EmployeePanelFiles\Styles\MainStyle.baml
 G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\EmployeePanelFiles\Themes\DarkTheme.baml
 G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\LoginForm.baml
@@ -52,5 +54,5 @@ G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProjec
 G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\MainProject.pdb
 G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\MainProject.genruntimeconfig.cache
 G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\ref\MainProject.dll
-G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\EmployeePanelFiles\Pages\Wallet.g.cs
-G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\EmployeePanelFiles\Pages\Wallet.baml
+G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\MessageBoxCustom.baml
+G:\Development\My Courses\C#\ملکی مجد\Final_Project\AP_Project\MainProject\MainProject\obj\Debug\net6.0-windows\MessageBoxCustom.g.cs

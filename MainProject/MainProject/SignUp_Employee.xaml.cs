@@ -1,9 +1,11 @@
 ﻿
 
+using MainProject.Controller;
+using MainProject.Models;
 using System.Text.RegularExpressions;
 using System.Windows;
-
 using System.Windows.Input;
+using CustomMessageBox;
 
 
 
@@ -50,6 +52,15 @@ namespace MainProject
         private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
 
+        }
+
+        private void btn_signup_Click(object sender, RoutedEventArgs e)
+        {
+            
+            // Employee employee = new Employee(null, NumericTextBox.Text, txt_firstname.Text, txt_lastname.Text, txt_Email.Text, txt_username.Text, txt_password.Password);
+            ////MessageBox.Show(dbFunctions.SignUp_Employee(employee).ToString());
+            // new CustomMessageBox.MessageBoxCustom(dbFunctions.SignUp_Employee(employee).ToString(), CustomMessageBox.MessageType.Success, CustomMessageBox.MessageButtons.Ok).Show();
+           
         }
     }
 }

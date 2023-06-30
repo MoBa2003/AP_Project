@@ -40,12 +40,7 @@
 
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="EssentialClasses">
-      <HintPath>..\..\EssentialClasses\EssentialClasses\bin\Debug\net6.0\EssentialClasses.dll</HintPath>
-    </Reference>
+    <PackageReference Include="Npgsql" Version="7.0.4" />
   </ItemGroup>
 
   <ItemGroup>
