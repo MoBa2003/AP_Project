@@ -27,22 +27,24 @@
             </Grid.RowDefinitions>
             
             <StackPanel  Grid.Column="1" Grid.Row="1">
-                <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                <TextBox x:Name="txt_newusername" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                                      materialDesign:HintAssist.Hint="New UserName : "
                                      materialDesign:HintAssist.FloatingOffset="0,-20"
                                      Foreground="White"
                                      BorderBrush="#c5c8cc"
                                      BorderThickness="0 0 0 1.5"
                                      />
-                <TextBox Margin="0 30" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                <Label Name="NewUsername_err" Margin="2" FontSize="12" HorizontalAlignment="Right" Foreground="#FF0000" />
+                <TextBox x:Name="txt_password" Margin="0 30" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                                      materialDesign:HintAssist.Hint="New Password : "
                                      materialDesign:HintAssist.FloatingOffset="0,-20"
                                      Foreground="White"
                                      BorderBrush="#c5c8cc"
                                      BorderThickness="0 0 0 1.5"
                                      />
+                <Label Name="Password_err" Margin="2" FontSize="12" HorizontalAlignment="Right" Foreground="#FF0000" />
 
-                <Button Content="Change"  RenderTransformOrigin="0.144,-1.452" Height="36"  Margin="0 30 0 0"/>
+                <Button Content="Change"  RenderTransformOrigin="0.144,-1.452" Height="36"  Margin="0 30 0 0" Click="Button_Click"/>
 
             </StackPanel>
         </Grid>

@@ -8,7 +8,38 @@
       d:DesignHeight="450" d:DesignWidth="800">
 
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
-       
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock  Text="Enter Card Information" FontSize="20" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="20">
+                <TextBlock Foreground="Orange" FontSize="13" Text="Card Number :" VerticalAlignment="Center" Width="100"/>
+                <TextBox Foreground="White" BorderBrush="#c5c8cc" x:Name="txtCardNumber" Width="300" Margin="10" />
+                <Label Margin="2" FontSize="10" Foreground="Red" Name="cardnumber_err" Height="21" Width="131" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="20">
+                <TextBlock Foreground="Orange" FontSize="13" Text="Expiration Date :" VerticalAlignment="Center" Width="100"/>
+                <DatePicker Foreground="Black" BorderBrush="#c5c8cc" x:Name="dpExpirationDate" Width="150" Margin="10" />
+                <Label Margin="2" FontSize="10" Foreground="Red" Name="expdate_err" Height="21" Width="99" />
+                <TextBlock Margin="10" Foreground="Orange" FontSize="13" Text="CVV :" VerticalAlignment="Center" Width="34"/>
+                <TextBox Foreground="White" BorderBrush="#c5c8cc" x:Name="txtCVV" Width="99" Margin="10" />
+                <Label Margin="2" FontSize="10" Foreground="Red" Name="cvv_err" Height="18" Width="78" />
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="20">
+                <TextBlock Foreground="Orange" FontSize="13" Text="Amount :" VerticalAlignment="Center" Width="100"/>
+                <TextBox Foreground="White" BorderBrush="#c5c8cc" x:Name="txtAmount" Width="60" Margin="10" Height="30" />
+                <Label Margin="2" FontSize="10" Foreground="Red" Name="amount_err" Height="22" Width="98" />
+            </StackPanel>
+            <Button Grid.Row="4" RenderTransformOrigin="0.144,-1.452" Content="Charge Wallet" HorizontalAlignment="Center" Margin="0,30,0,-10" Width="150" Height="40" Click="Button_Click"/>
+        </Grid>
     </Border>
 </Page>
 

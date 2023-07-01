@@ -24,7 +24,18 @@
                                      Foreground="White"
                                      BorderBrush="#c5c8cc"
                                      BorderThickness="0 0 0 1.5"
+                                     Name="txt_code"
                                      />
+                <Label Name="code_err" Margin="0,2,0,2" FontSize="12" HorizontalAlignment="Left" Foreground="#FF0000" RenderTransformOrigin="0.5,0.5" Width="225" Grid.Column="1" >
+                    <Label.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Label.RenderTransform>
+                </Label>
             </Grid>
             <Grid Margin="10">
                 <Grid.ColumnDefinitions>
@@ -43,8 +54,9 @@
                                      Foreground="White"
                                      BorderBrush="#c5c8cc"
                                      BorderThickness="0 0 0 1.5"
-                                     
+                                     Name="txt_sender"
                                      />
+                    <Label Name="sender_err" Margin="2" FontSize="12" HorizontalAlignment="Right" Foreground="#FF0000" />
                     <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                                      materialDesign:HintAssist.Hint="Receiver Address: "
                                      Margin="0 30"
@@ -52,39 +64,44 @@
                                      Foreground="White"
                                      BorderBrush="#c5c8cc"
                                      BorderThickness="0 0 0 1.5"
+                                     Name="txt_receiver"
                                      />
+                    <Label Name="receiver_err" Margin="2" FontSize="12" HorizontalAlignment="Right" Foreground="#FF0000" />
                     <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                                      materialDesign:HintAssist.Hint="Weight: "
                                      materialDesign:HintAssist.FloatingHintHorizontalAlignment="Center"
-                              
+                                     Name="txt_weight"
                                      TextAlignment="Center"
-                                    Margin="-20 5"
+                                     Margin="-20 5"
                                      materialDesign:HintAssist.FloatingOffset="0,-20"
                                      Foreground="White"
                                      BorderBrush="#c5c8cc"
                                      BorderThickness="0 0 0 1.5" Width="116" RenderTransformOrigin="-0.273,0.498" 
                                      />
+                    <Label Name="weight_err" Margin="2" FontSize="12" HorizontalAlignment="Center" Foreground="#FF0000" />
 
 
 
                 </StackPanel>
                 <StackPanel Grid.Column="2" Grid.ColumnSpan="2" Margin="10">
 
-                    <ComboBox  Grid.Row="0" Style="{StaticResource MaterialDesignOutlinedComboBox}" VerticalAlignment="Center" materialDesign:HintAssist.Hint="Content Type :" Background="{DynamicResource SecundaryBackgroundColor}" Foreground="White">
+                    <ComboBox Name="combofirst" Grid.Row="0" Style="{StaticResource MaterialDesignOutlinedComboBox}" VerticalAlignment="Center" materialDesign:HintAssist.Hint="Content Type :" Background="{DynamicResource SecundaryBackgroundColor}" Foreground="White">
                         <ComboBoxItem Foreground="Black"  Content="Aliefffffffffffffffffffffffffffffffff" />
                         <ComboBoxItem Foreground="Black"  Content="B" />
                         <ComboBoxItem Foreground="Black"  Content="C" />
                     </ComboBox>
-                    <ComboBox Margin="0 20" Style="{StaticResource MaterialDesignOutlinedComboBox}" materialDesign:HintAssist.Hint="Content Type :" Background="{DynamicResource SecundaryBackgroundColor}" Foreground="White" >
+                    <Label Name="content1_err" Margin="2" FontSize="12" HorizontalAlignment="Right" Foreground="#FF0000" />
+                    <ComboBox Name="combosecond" Margin="0 20" Style="{StaticResource MaterialDesignOutlinedComboBox}" materialDesign:HintAssist.Hint="Content Type :" Background="{DynamicResource SecundaryBackgroundColor}" Foreground="White" >
                         <ComboBoxItem Foreground="Black"  Content="Aliefffffffffffffffffffffffffffffffff" />
                         <ComboBoxItem Foreground="Black"  Content="B" />
                         <ComboBoxItem Foreground="Black"  Content="C" />
                     </ComboBox>
+                    <Label Name="content2_err" Margin="2" FontSize="12" HorizontalAlignment="Right" Foreground="#FF0000" />
 
 
                 </StackPanel>
 
-               
+
 
 
             </Grid>
@@ -95,7 +112,7 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel>
-                    <CheckBox Grid.Column="1" Margin="10" Content="is Expensive" Foreground="White" FontWeight="Bold">
+                    <CheckBox x:Name="checkbox" Grid.Column="1" Margin="10" Content="is Expensive" Foreground="White" FontWeight="Bold">
                         <CheckBox.Style>
                             <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource MaterialDesignCheckBox}">
                                 <Setter Property="FontSize" Value="16" />
@@ -103,7 +120,8 @@
                             </Style>
                         </CheckBox.Style>
                     </CheckBox>
-                    <Button Content="Submit" Width="345" RenderTransformOrigin="0.144,-1.452" Height="36"  Margin="0 30 0 0"/>
+                    <Label Name="check_err" Margin="2" FontSize="12" HorizontalAlignment="Left" Foreground="#FF0000" />
+                    <Button Content="Submit" Width="345" RenderTransformOrigin="0.144,-1.452" Height="36"  Margin="0 30 0 0" Click="Button_Click"/>
 
                 </StackPanel>
                 <materialDesign:PackIcon Kind="Send"

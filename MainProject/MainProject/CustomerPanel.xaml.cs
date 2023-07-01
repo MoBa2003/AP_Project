@@ -144,5 +144,10 @@ namespace MainProject
         {
             fContainer.Navigate(new System.Uri("EmployeePanelFiles/Pages/OrderInfo.xaml", UriKind.RelativeOrAbsolute));
         }
+
+        private void MenuItem_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

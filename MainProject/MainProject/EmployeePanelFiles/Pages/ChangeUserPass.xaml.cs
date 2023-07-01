@@ -24,5 +24,19 @@ namespace MainProject.EmployeePanelFiles.Pages
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NewUsername_err.Content = "";
+            Password_err.Content = "";
+            if(string.IsNullOrEmpty(txt_newusername.Text))
+            {
+                NewUsername_err.Content = "New Username Empty";
+            }
+            else if(string.IsNullOrEmpty(txt_password.Text))
+            {
+                Password_err.Content = "Password Empty";
+            }
+        }
     }
 }

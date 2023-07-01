@@ -53,7 +53,7 @@
                     <!-- Start: MenuItem -->
                     <StackPanel Grid.Row="1" Margin="-1 40 0 20">
                         <Button x:Name="btn_ChangeUserPass" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btn_ChangeUserPass_MouseEnter" MouseLeave="btn_ChangeUserPass_MouseLeave" Click="btn_ChangeUserPass_Click">
-                            <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource restore}" IconWidth="16" Text="Change Username Password" VerticalAlignment="Center"/>
+                            <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource restore}" IconWidth="16" Text="Change Username Password" VerticalAlignment="Center" Loaded="MenuItem_Loaded"/>
                         </Button>
                         <Button x:Name="btn_Wallet" Style="{DynamicResource PopupButtonStyle}"  MouseEnter="btn_Wallet_MouseEnter" MouseLeave="btn_Wallet_MouseLeave" Click="btn_Wallet_Click">
                             <ctls:MenuItem GroupName="MenuItem" IndicatorBrush="{DynamicResource PrimaryBlueColor}" Icon="{DynamicResource billing}" IconWidth="16" Text="Wallet" VerticalAlignment="Center"/>

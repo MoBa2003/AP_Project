@@ -24,5 +24,15 @@ namespace WPFModernVerticalMenu.Pages
         {
             InitializeComponent();
         }
+
+        private void btnSignUp_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

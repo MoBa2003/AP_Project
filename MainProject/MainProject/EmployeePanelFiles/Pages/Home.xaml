@@ -51,7 +51,7 @@
                                 </LinearGradientBrush>
                             </materialDesign:PackIcon.Foreground>
                         </materialDesign:PackIcon>
-                        <Button Content="Register" Width="345" RenderTransformOrigin="0.144,-1.452" Height="36"  Margin="0 50 0 0"/>
+                        <Button Content="Register" Width="345" RenderTransformOrigin="0.144,-1.452" Height="36"  Margin="0 50 0 0" Click="Button_Click"/>
 
 
                     </StackPanel>
@@ -75,19 +75,25 @@
                 </Grid.RowDefinitions>
 
                 <Label Content="First Name:" Grid.Row="0" Margin="10" />
-                <TextBox Grid.Row="1" Margin="10" />
+                <TextBox x:Name="txt_firstname" Grid.Row="1" Margin="10" />
+                <Label Name="firstname_err" Grid.Row="1" Margin="2" FontSize="12" HorizontalAlignment="Right" Foreground="#FF0000" />
+                
 
                 <Label Content="Last Name:" Grid.Row="2" Margin="10" />
-                <TextBox Grid.Row="3" Margin="10" />
+                <TextBox x:Name="txt_lastname" Grid.Row="3" Margin="10" />
+                <Label Name="lastname_err" Grid.Row="3" Margin="2" FontSize="12" HorizontalAlignment="Right" Foreground="#FF0000" />
 
                 <Label Content="National Code:" Grid.Row="4" Margin="10" />
-                <TextBox Grid.Row="5" Margin="10" />
+                <TextBox x:Name="txt_code" Grid.Row="5" Margin="10" />
+                <Label Name="code_err" Grid.Row="5" Margin="2" FontSize="12" HorizontalAlignment="Right" Foreground="#FF0000" />
 
                 <Label Content="Email:" Grid.Row="6" Margin="10" />
-                <TextBox Grid.Row="7" Margin="10" />
+                <TextBox x:Name="txt_email" Grid.Row="7" Margin="10" />
+                <Label Name="email_err" Grid.Row="7" Margin="2" FontSize="12" HorizontalAlignment="Right" Foreground="#FF0000" />
 
                 <Label Content="Phone Number:" Grid.Row="8" Margin="10" />
-                <TextBox Grid.Row="9" Margin="10" />
+                <TextBox x:Name="txt_phone" Grid.Row="9" Margin="10" TextChanged="TextBox_TextChanged" />
+                <Label Name="Phonenumber_err" Grid.Row="9" Margin="2" FontSize="12" HorizontalAlignment="Right" Foreground="#FF0000" />
 
             </Grid>
 
