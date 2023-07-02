@@ -12,20 +12,23 @@ namespace MainProject.Models
         public static bool NameValidate(this string name)
         {
             Regex regex = new Regex("^[A-Za-z]{3,32}$");
-            if (regex.IsMatch(name)) return true;
+            if (regex.IsMatch(name)) 
+                return true;
             return false;
         }
 
         public static bool EmailValidate(this string name)
         {
             Regex regex = new Regex("^[A-Za-z0-9]{3,32}@[A-Za-z]{3,32}\\.[A-Za-z]{2,3}$");
-            if (regex.IsMatch(name)) return true;
+            if (regex.IsMatch(name)) 
+                return true;
             return false;
         }
         public static bool PassWordValidate(this string name)
         {
             Regex regex = new Regex("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{8,32}$");
-            if (regex.IsMatch(name)) return true;
+            if (regex.IsMatch(name)) 
+                return true;
             return false;
         }
 
@@ -33,38 +36,45 @@ namespace MainProject.Models
         {
             Regex regex = new Regex("^00[0-9]{8}$");
             if (!regex.IsMatch(id)) throw new Exception("Invalid SSN!");
-            
+            //check to see wether it exist or not
+            //foreach (var cust in Customer.customers) if (cust.ssn == id) throw new Exception("This SSN is already in use!");
         }
         public static void SSNValidate(this string ssn)
         {
             Regex regex = new Regex("^[0-9]{2}9[0-9]{2}$");
-            if (!regex.IsMatch(ssn)) throw new Exception("Invalid ID!");
-           
+            if (!regex.IsMatch(ssn)) 
+                throw new Exception("Invalid ID!");
+            //checl below to see wether it exist or not
+            //foreach (var emp in Employee.employees) if (emp.id == id) throw new Exception("This ID is already in use!");
         }
+
         //public static void UserNameValidate(this string id)
         //{
         //    foreach (var emp in Employee.employees) if (emp.UserName == id) throw new Exception("This Username is already in use!");
         //    foreach (var emp in Customer.customers) if (emp.UserName == id) throw new Exception("This Username is already in use!");
         //}
 
-        public static bool PhoneValidate(this string s)
+        public static bool PhoneValidate(this string entry)
         {
             Regex regex = new Regex("^09[0-9]{9}$");
-            if (regex.IsMatch(s)) return true;
+            if (regex.IsMatch(entry)) 
+                return true;
             return false;
         }
 
-        public static bool CVV_Validate(this string s)
+        public static bool CVV_Validate(this string entry)
         {
             Regex regex = new Regex("^[0-9]{3,4}$");
-            if (regex.IsMatch(s)) return true;
+            if (regex.IsMatch(entry)) 
+                return true;
             return false;
         }
 
         public static bool IsExpired(this DateTime date)
         {
             DateTime now = DateTime.Now;
-            if (date.CompareTo(now) < 0) return true;
+            if (date.CompareTo(now) < 0) 
+                return true;
             return false;
         }
 
@@ -83,7 +93,8 @@ namespace MainProject.Models
                     sum += int.Parse(code[i].ToString()) * 2;
                 }
             }
-            if (sum % 10 == 0) return true;
+            if (sum % 10 == 0) 
+                return true;
             return false;
         }
 
