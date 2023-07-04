@@ -68,7 +68,6 @@ namespace MainProject
         private void btn_signup_Click(object sender, RoutedEventArgs e)
         {
             firstname_err.Content = "";
-                //# c5c8cc
             lastname_err.Content = "";
             personnelnumber_err.Content = "";
             Email_err.Content = "";
@@ -82,45 +81,62 @@ namespace MainProject
             txt_username.BorderBrush = new SolidColorBrush(Colors.WhiteSmoke);
             txt_password.BorderBrush = new SolidColorBrush(Colors.WhiteSmoke);
             txt_repeatPassword.BorderBrush = new SolidColorBrush(Colors.WhiteSmoke);
-
-            if (string.IsNullOrEmpty(txt_firstname.Text))
+            bool IsValid = true;
+            if (string.IsNullOrEmpty(txt_firstname.Text) && !txt_firstname.Text.NameValidate())
             {
-                firstname_err.Content = "Firstname Empty";
+                firstname_err.Content = "Firstname Invalid";
                 txt_firstname.BorderBrush = new SolidColorBrush(Colors.Red);
+                IsValid = false;
             }
-            else if (string.IsNullOrEmpty(txt_lastname.Text))
+            else if (string.IsNullOrEmpty(txt_lastname.Text) && !txt_lastname.Text.NameValidate())
             {
-                lastname_err.Content = "Lastname Empty";
+                lastname_err.Content = "Lastname Invlaid";
                 txt_lastname.BorderBrush = new SolidColorBrush(Colors.Red);
+                IsValid = false;
             }
-            else if (string.IsNullOrEmpty(NumericTextBox.Text))
+            else if (!UInt64.TryParse(NumericTextBox.Text, out var num) && !NumericTextBox.Text.SSNValidate())
             {
-                personnelnumber_err.Content = "Personnel Number Empty";
+                personnelnumber_err.Content = "Personnel Number Invalid";
                 NumericTextBox.BorderBrush = new SolidColorBrush(Colors.Red);
+                IsValid = false;
             }
-            else if (string.IsNullOrEmpty(txt_Email.Text))
+            else if (string.IsNullOrEmpty(txt_Email.Text) && !txt_Email.Text.EmailValidate())
             {
-                Email_err.Content = "Email Empty";
+                Email_err.Content = "Email Invalid";
                 txt_Email.BorderBrush = new SolidColorBrush(Colors.Red);
+                IsValid = false;
             }
-            else if (string.IsNullOrEmpty(txt_username.Text))
+            else if (string.IsNullOrEmpty(txt_username.Text))//use validate here
             {
-                username_err.Content = "Username Empty";
+                username_err.Content = "Username Invalid";
                 txt_username.BorderBrush = new SolidColorBrush(Colors.Red);
+                IsValid = false;
             }
-            else if (string.IsNullOrEmpty(txt_password.Password))
+            else if (string.IsNullOrEmpty(txt_password.Password) && !txt_password.Password.PassWordValidate())
             {
-                pass_err.Content = "Password Empty";
+                pass_err.Content = "Password Invalid";
                 txt_password.BorderBrush = new SolidColorBrush(Colors.Red);
+                IsValid = false;
             }
-            else if (string.IsNullOrEmpty(txt_repeatPassword.Password))
+            else if (string.IsNullOrEmpty(txt_repeatPassword.Password) && !txt_repeatPassword.Password.PassWordValidate())
             {
-                passrepeat_err.Content = "PasswordRepeat Empty";
+                passrepeat_err.Content = "PasswordRepeat Invalid";
                 txt_repeatPassword.BorderBrush = new SolidColorBrush(Colors.Red);
+                IsValid = false;
             }
-            else if(txt_password.Password != txt_repeatPassword.Password)
+            else if (txt_password.Password != txt_repeatPassword.Password)
             {
                 passrepeat_err.Content = "Does Not Match The Password";
+                IsValid = false;
+            }
+
+            if (IsValid)
+            {
+                Employee emp = new Employee(1, NumericTextBox.Text, txt_firstname.Text, txt_lastname.Text, txt_Email.Text, txt_username.Text, txt_password.Password);
+                Employee.employees.Add(emp);
+                var LoginPanel = new LoginForm();
+                this.Close();
+                LoginPanel.ShowDialog();
             }
 
             // Employee employee = new Employee(null, NumericTextBox.Text, txt_firstname.Text, txt_lastname.Text, txt_Email.Text, txt_username.Text, txt_password.Password);

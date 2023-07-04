@@ -32,20 +32,22 @@ namespace MainProject.Models
             return false;
         }
 
-        public static void IDValidate(this string id)
+        public static bool IDValidate(this string id)
         {
             Regex regex = new Regex("^00[0-9]{8}$");
             if (!regex.IsMatch(id)) throw new Exception("Invalid SSN!");
             //check to see wether it exist or not
             //foreach (var cust in Customer.customers) if (cust.ssn == id) throw new Exception("This SSN is already in use!");
+            return true;
         }
-        public static void SSNValidate(this string ssn)
+        public static bool SSNValidate(this string ssn)
         {
             Regex regex = new Regex("^[0-9]{2}9[0-9]{2}$");
-            if (!regex.IsMatch(ssn)) 
+            if (!regex.IsMatch(ssn))
                 throw new Exception("Invalid ID!");
             //checl below to see wether it exist or not
             //foreach (var emp in Employee.employees) if (emp.id == id) throw new Exception("This ID is already in use!");
+            return true;
         }
 
         //public static void UserNameValidate(this string id)

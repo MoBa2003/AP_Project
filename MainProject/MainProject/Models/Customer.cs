@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection.Emit;
+using System.Collections.ObjectModel;
 
 namespace MainProject.Models
 {
     public class Customer
     {
+        public static ObservableCollection<Customer> customers = new ObservableCollection<Customer>();
+        public ObservableCollection<Product> customerproducts = new ObservableCollection<Product>();
         public int? Id { get; set; }
 
         public string? National_Code;
@@ -53,15 +56,15 @@ namespace MainProject.Models
             //Password = pass.generated();
             //UserName = user.generated();
 
-            string fromMail = "Sender@gmail.com"; //sender gmail
-            string Password = "app pass"; //app password you made in gamil in two factor
+            string fromMail = "swiftordercompany@gmail.com"; //sender gmail
+            string Password = "uyxakhpyhfgqehjs"; //app password you made in gamil in two factor
 
             MailMessage message = new MailMessage();
             message.From = new MailAddress(fromMail);
-            message.To.Add(new MailAddress(this.Email));//destination email
+            message.To.Add(new MailAddress("gholamiali41379@gmail.com"));//destination email
 
             message.Subject = "Your Username and Password in MOBALI";
-            message.Body = $"<p>Welcome \nHere is Your Username and PassWord \nUsername :{this.UserName} Password :{this.Password} </p>";
+            message.Body = $"<p>Welcome <br>Here is Your Username and PassWord <br>Username :{this.UserName} <br>Password :{this.Password} </p>";
             
             message.IsBodyHtml = true;
 

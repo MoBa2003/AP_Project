@@ -49,15 +49,43 @@ namespace MainProject
             password_err.Content = "";
             txtUser.BorderBrush = new SolidColorBrush(Colors.DarkGray);
             txtPass.BorderBrush = new SolidColorBrush(Colors.DarkGray);
-            if (string.IsNullOrEmpty(txtUser.Text))
+            bool IsValid = true;
+            if (string.IsNullOrEmpty(txtUser.Text))//check if it exist check if it is valid
             {
                 Username_err.Content = "Username Invalid";
                 txtUser.BorderBrush = new SolidColorBrush(Colors.Red);
+                IsValid = false;
             }
             else if (string.IsNullOrEmpty(txtPass.Password))
             {
                 password_err.Content = "Password Invalid";
                 txtPass.BorderBrush = new SolidColorBrush(Colors.Red);
+                IsValid = false;
+            }
+
+            if (IsValid)
+            {
+                foreach (var employee in Employee.employees)
+                {
+                    if (txtUser.Text == employee.UserName && txtPass.Password == employee.Password)
+                    {
+                        var empPanel = new EmployeePanel(employee);
+                        this.Close();
+                        empPanel.ShowDialog();
+
+
+                    }
+                }
+                foreach (var customer in Customer.customers)
+                {
+                    if (txtUser.Text == customer.UserName && txtPass.Password == customer.Password)
+                    {
+                        var custPanel = new CustomerPanel(customer);
+                        this.Close();
+                        custPanel.ShowDialog();
+
+                    }
+                }
             }
 
             //Employee em = dbFunctions.getEmployeeByUsernamePassword(txtUser.Text, txtPass.Password);

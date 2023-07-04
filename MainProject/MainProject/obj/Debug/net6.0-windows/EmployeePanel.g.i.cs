@@ -166,7 +166,7 @@ namespace MainProject {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MainProject;component/employeepanel.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MainProject;V1.0.0.0;component/employeepanel.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\EmployeePanel.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

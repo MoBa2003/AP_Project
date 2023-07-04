@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MainProject.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,8 +21,10 @@ namespace MainProject
     /// </summary>
     public partial class EmployeePanel : Window
     {
-        public EmployeePanel()
+        public Employee Current { get; set; }
+        public EmployeePanel(Employee emp)
         {
+            Current = emp;
             InitializeComponent();
         }
         private void BG_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)

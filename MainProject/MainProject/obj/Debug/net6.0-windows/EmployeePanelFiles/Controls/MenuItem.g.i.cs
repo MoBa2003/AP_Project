@@ -61,7 +61,7 @@ namespace WPFModernVerticalMenu.Controls {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MainProject;component/employeepanelfiles/controls/menuitem.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MainProject;V1.0.0.0;component/employeepanelfiles/controls/menuitem.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\EmployeePanelFiles\Controls\MenuItem.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

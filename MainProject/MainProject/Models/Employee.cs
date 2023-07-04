@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ namespace MainProject.Models
 {
     public class Employee
     {
+        public static ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
         public int? Id;
         public string PersonnelNumber { get; set; }
         public string FirstName { get; set; }

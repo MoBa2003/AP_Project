@@ -136,7 +136,7 @@ namespace MainProject.EmployeePanelFiles.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/MainProject;component/employeepanelfiles/pages/advancedsearch.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/MainProject;V1.0.0.0;component/employeepanelfiles/pages/advancedsearch.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\EmployeePanelFiles\Pages\AdvancedSearch.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

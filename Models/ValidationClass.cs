@@ -68,19 +68,30 @@ namespace EssentialClasses
             return false;
         }
 
+
         public static bool IsCardValid(this string code)
         {
             int sum = 0;
 
             for (int i = 0; i < code.Length; i++)
             {
-                if (i % 2 == 0)
+                if (i % 2 == 1)
                 {
                     sum += int.Parse(code[i].ToString());
                 }
                 else
                 {
-                    sum += int.Parse(code[i].ToString()) * 2;
+                    //if the plus made it more than 10
+                    if (int.Parse(code[i].ToString()) * 2 >= 10)
+                    {
+                        string s = (int.Parse(code[i].ToString()) * 2).ToString()
+                        sum += int.Parse(s[1].ToString()) + int.Parse(s[0].ToString());
+                    }
+                    else
+                    {
+                        sum += int.Parse(code[i].ToString()) * 2;
+                    }
+                    
                 }
             }
             if (sum % 10 == 0) return true;

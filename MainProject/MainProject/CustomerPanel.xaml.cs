@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MainProject.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +21,12 @@ namespace MainProject
     /// </summary>
     public partial class CustomerPanel : Window
     {
-        public CustomerPanel()
+        public Customer Current { get; set; }
+        public CustomerPanel(Customer cust)
         {
+            Current = cust;
             InitializeComponent();
-        }
+        }                                               
         private void BG_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Tg_Btn.IsChecked = false;
