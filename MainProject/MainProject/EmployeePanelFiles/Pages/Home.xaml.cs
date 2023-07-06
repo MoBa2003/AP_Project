@@ -255,7 +255,14 @@ namespace WPFModernVerticalMenu.Pages
                 if (dbFunctions.SignUp_Customer(customer))
                 {
                     new CustomMessageBox.MessageBoxCustom("Customer Signed up successfully", CustomMessageBox.MessageType.Success, CustomMessageBox.MessageButtons.Ok).ShowDialog();
-                    ValidationClass.SendEmail(customer.Email,"Welcome",$"username : {customer.UserName}\nPassword : {customer.Password}");
+                    if(ValidationClass.SendEmail(customer.Email,"Welcome",$"username : {customer.UserName}\nPassword : {customer.Password}"))
+                    {
+                        new CustomMessageBox.MessageBoxCustom("username and password sent to Customer email", CustomMessageBox.MessageType.Success, CustomMessageBox.MessageButtons.Ok).ShowDialog();
+                    }
+                    else
+                    {
+                        new CustomMessageBox.MessageBoxCustom("username and password did not sed to customer emial", CustomMessageBox.MessageType.Error, CustomMessageBox.MessageButtons.Ok).ShowDialog();
+                    }
                 }
                 else
                 {

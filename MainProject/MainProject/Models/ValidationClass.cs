@@ -96,24 +96,32 @@ namespace MainProject.Models
             return false;
         }
 
-        public static bool IsCardValid(this string code)
+        public static bool IsCardValid(string creditCardNumber)
         {
-            int sum = 0;
 
-            for (int i = 0; i < code.Length; i++)
+            int sum = 0;
+            bool alternate = false;
+
+            for (int i = creditCardNumber.Length - 1; i >= 0; i--)
             {
-                if (i % 2 == 0)
+                int digit = int.Parse(creditCardNumber[i].ToString());
+
+                if (alternate)
                 {
-                    sum += int.Parse(code[i].ToString());
+                    digit *= 2;
+                    if (digit > 9)
+                    {
+                        digit = (digit % 10) + 1;
+                    }
                 }
-                else
-                {
-                    sum += int.Parse(code[i].ToString()) * 2;
-                }
+
+                sum += digit;
+                alternate = !alternate;
             }
-            if (sum % 10 == 0)
-                return true;
-            return false;
+
+            return (sum % 10 == 0);
+
+
         }
 
         public static string GenerateUsername()
@@ -133,27 +141,31 @@ namespace MainProject.Models
       
         public static bool SendEmail(string recipientEmail, string subject, string body)
         {
-            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
-            smtpClient.EnableSsl = true;
-            smtpClient.UseDefaultCredentials = false;
-
-            
-            string senderEmail = "mohammadmahdisharafbayani@gmail.com";
-            string senderPassword = "mxvzdmyjtybbxqwv";
-
-          
-            smtpClient.Credentials = new NetworkCredential(senderEmail, senderPassword);
-
-          
-            MailMessage mailMessage = new MailMessage();
-            mailMessage.From = new MailAddress(senderEmail);
-            mailMessage.To.Add(recipientEmail);
-            mailMessage.Subject = subject;
-            mailMessage.Body = body;
+            try
+            {
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+                smtpClient.EnableSsl = true;
+                smtpClient.UseDefaultCredentials = false;
 
 
-            smtpClient.Send(mailMessage);
-            return true;
+                string senderEmail = "mohammadmahdisharafbayani@gmail.com";
+                string senderPassword = "mxvzdmyjtybbxqwv";
+
+
+                smtpClient.Credentials = new NetworkCredential(senderEmail, senderPassword);
+
+
+                MailMessage mailMessage = new MailMessage();
+                mailMessage.From = new MailAddress(senderEmail);
+                mailMessage.To.Add(recipientEmail);
+                mailMessage.Subject = subject;
+                mailMessage.Body = body;
+
+
+                smtpClient.Send(mailMessage);
+                return true;
+            }
+            catch { return false; }
         }
 
         public static void SaveDataGridToCsv(List<Product> orders, string filePath)

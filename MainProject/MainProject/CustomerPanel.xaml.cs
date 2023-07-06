@@ -125,13 +125,13 @@ namespace MainProject
             Close();
         }
 
-        private void btnRestore_Click(object sender, RoutedEventArgs e)
-        {
-            if (WindowState == WindowState.Normal)
-                WindowState = WindowState.Maximized;
-            else
-                WindowState = WindowState.Normal;
-        }
+        //private void btnRestore_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (WindowState == WindowState.Normal)
+        //        WindowState = WindowState.Maximized;
+        //    else
+        //        WindowState = WindowState.Normal;
+        //}
 
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
