@@ -29,7 +29,7 @@ namespace MainProject.Models
     {
       
 
-        public int? Id;
+        public Int64? Id;
        public string Sender_National_code;
         public string Sender_Address { get; set; }
         public string Receiver_address { get; set; }
@@ -45,7 +45,7 @@ namespace MainProject.Models
         public string? Customer_comment;
         public string? ReceiverPhoneNumber;
 
-        public Product(int? id,string sender_national_code,string sender_address,string receiver_address , ContentType contenttype,bool has_expensive_object,double weight, TypeOfDelivery typeOfdelivery,double price, Status status,string? customer_comment, string? phonenumber = null)
+        public Product(Int64? id,string sender_national_code,string sender_address,string receiver_address , ContentType contenttype,bool has_expensive_object,double weight, TypeOfDelivery typeOfdelivery,double price, Status status,string? customer_comment, string? phonenumber = null)
         {
             this.Id = id;
             this.Sender_National_code = sender_national_code;

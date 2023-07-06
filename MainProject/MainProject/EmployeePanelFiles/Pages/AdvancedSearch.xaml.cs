@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,14 +74,23 @@ namespace MainProject.EmployeePanelFiles.Pages
                     {
                         condition += $"sender_national_code = {Activecustomer.National_Code} and  ";
                     }
+                   
+                    DataTable dt;
                     if (condition != "")
-                    {
-                        datagrid1.ItemsSource = MainProject.Controller.dbFunctions.QueryOnOrders(condition.Substring(0, condition.Length - 4)).DefaultView;
+                    { 
+
+                        dt = MainProject.Controller.dbFunctions.QueryOnOrders(condition.Substring(0, condition.Length - 4));
+                        datagrid1.ItemsSource = dt.DefaultView;
+
                     }
                     else
                     {
-                        datagrid1.ItemsSource = MainProject.Controller.dbFunctions.QueryOnOrders("").DefaultView;
+                       
+                        dt = MainProject.Controller.dbFunctions.QueryOnOrders("");
+                        datagrid1.ItemsSource = dt.DefaultView;
                     }
+                    DateTime mynow = DateTime.Now;
+                    ValidationClass.SaveDataTableToCsv(dt, $"{mynow.Year}-{mynow.Month}-{mynow.Day}_{mynow.Hour}-{mynow.Minute}-{mynow.Second}.csv");
                 }
                 else
                 {
@@ -119,23 +129,24 @@ namespace MainProject.EmployeePanelFiles.Pages
                 {
                     condition += $"sender_national_code = '{Activecustomer.National_Code}' and ";
                 }
+              
+                DataTable dt;
+
                 if (condition != "")
                 {
-                    datagrid1.ItemsSource = MainProject.Controller.dbFunctions.QueryOnOrders(condition.Substring(0, condition.Length - 4)).DefaultView;
+
+                    dt = MainProject.Controller.dbFunctions.QueryOnOrders(condition.Substring(0, condition.Length - 4));
+                    datagrid1.ItemsSource = dt.DefaultView;
                 }
                 else
                 {
-                    datagrid1.ItemsSource = MainProject.Controller.dbFunctions.QueryOnOrders("").DefaultView;
+                 
+                    dt = MainProject.Controller.dbFunctions.QueryOnOrders("");
+                    datagrid1.ItemsSource = dt.DefaultView;
                 }
-
+                DateTime mynow = DateTime.Now;
+                ValidationClass.SaveDataTableToCsv(dt, $"{mynow.Year}-{mynow.Month}-{mynow.Day}_{mynow.Hour}-{mynow.Minute}-{mynow.Second}.csv");
             }
-            //try {
-            //    MessageBox.Show(condition.Substring(0, condition.Length - 4));
-            //}
-            //catch
-            //{
-
-            //}
         }
 
         private void txt_sender_national_code_TextChanged(object sender, TextChangedEventArgs e)
