@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Resources\**" />
+    <Compile Remove="Styles\**" />
+    <EmbeddedResource Remove="Resources\**" />
+    <EmbeddedResource Remove="Styles\**" />
+    <None Remove="Resources\**" />
+    <None Remove="Styles\**" />
+    <Page Remove="Resources\**" />
+    <Page Remove="Styles\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="EmployeePanelFiles\Resources\logo.png" />
+    <None Remove="Images\back-image.jpg" />
+    <None Remove="Images\key-icon.png" />
+    <None Remove="Images\logo.png" />
+    <None Remove="Images\pexels-hasan-albari-1229861.jpg" />
+    <None Remove="Images\pexels-karolina-grabowska-5624981.jpg" />
+    <None Remove="Images\user-icon.png" />
+    <None Remove="pexels-ann-h-1762851.jpg" />
+    <None Remove="pexels-hasan-albari-1229861.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="EmployeePanelFiles\Resources\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="30.0.1" />
+    <PackageReference Include="iTextSharp" Version="5.5.13.3" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="Npgsql" Version="7.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\back-image.jpg" />
+    <Resource Include="Images\key-icon.png" />
+    <Resource Include="Images\user-icon.png" />
+  </ItemGroup>
+
+</Project>
