@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MainProject.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MainProject.Models;
 
 namespace MainProject
 {
@@ -20,6 +22,8 @@ namespace MainProject
     /// </summary>
     public partial class CustomerPanel : Window
     {
+        Customer ActiveCustomer;
+       
         public CustomerPanel()
         {
             InitializeComponent();
@@ -54,7 +58,8 @@ namespace MainProject
                 Popup.PlacementTarget = btn_Wallet;
                 Popup.Placement = PlacementMode.Right;
                 Popup.IsOpen = true;
-                Header.PopupText.Text = "Wallet";
+                Header.PopupText.Text = $"Wallet ({ActiveCustomer.Wallet*1000})";
+               
             }
         }
 
@@ -62,6 +67,11 @@ namespace MainProject
         {
             Popup.Visibility = Visibility.Collapsed;
             Popup.IsOpen = false;
+        }
+
+        internal void getCustomer(Customer customer)
+        {
+            ActiveCustomer = customer;
         }
 
         private void btn_advanced_Search_MouseEnter(object sender, MouseEventArgs e)
@@ -110,16 +120,18 @@ namespace MainProject
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
+            LoginForm lg = new LoginForm();
+            lg.Show();
             Close();
         }
 
-        private void btnRestore_Click(object sender, RoutedEventArgs e)
-        {
-            if (WindowState == WindowState.Normal)
-                WindowState = WindowState.Maximized;
-            else
-                WindowState = WindowState.Normal;
-        }
+        //private void btnRestore_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (WindowState == WindowState.Normal)
+        //        WindowState = WindowState.Maximized;
+        //    else
+        //        WindowState = WindowState.Normal;
+        //}
 
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
@@ -143,6 +155,34 @@ namespace MainProject
         private void btn_order_info_Click(object sender, RoutedEventArgs e)
         {
             fContainer.Navigate(new System.Uri("EmployeePanelFiles/Pages/OrderInfo.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            lbl_name.Content = ActiveCustomer.FirstName + " " + ActiveCustomer.LastName;
+        }
+
+        private void fContainer_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+            if (e.Content is MainProject.EmployeePanelFiles.Pages.AdvancedSearch advancedsearch)
+            {
+                advancedsearch.isEmployee = false;
+                advancedsearch.Activecustomer = ActiveCustomer;
+            }
+           else if (e.Content is MainProject.EmployeePanelFiles.Pages.OrderInfo orderinfo)
+            {
+                orderinfo.IsEmployee = false;
+                orderinfo.ActiveCustomer = ActiveCustomer;
+            }
+            else if(e.Content is MainProject.EmployeePanelFiles.Pages.ChangeUserPass changeuserpass)
+            {
+                changeuserpass.activeCustomer = ActiveCustomer;
+            }
+            else if (e.Content is MainProject.EmployeePanelFiles.Pages.Wallet wallet)
+            {
+                wallet.activeCustomer = ActiveCustomer;
+            }
+
         }
     }
 }

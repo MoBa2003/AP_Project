@@ -7,7 +7,8 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:materialDesign1="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Dashboard">
+      Title="Dashboard"
+      Loaded="Page_Loaded">
 
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
 
@@ -25,18 +26,23 @@
 
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <CheckBox Margin="0 0" Name="SearchBynationalCode_Checkbox" HorizontalAlignment="Center" />
+                        <CheckBox Margin="0 0" Name="SearchBynationalCode_Checkbox" HorizontalAlignment="Center" Unchecked="SearchBynationalCode_Checkbox_Unchecked" />
 
-
-                        <TextBox  IsEnabled="{Binding ElementName=SearchBynationalCode_Checkbox,Path=IsChecked}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                        <StackPanel  Margin="10">
+                            <TextBox Name="txt_sender_national_code"  IsEnabled="{Binding ElementName=SearchBynationalCode_Checkbox,Path=IsChecked}" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                                     
                                      materialDesign:HintAssist.Hint="Sender National Code"
                                      materialDesign:HintAssist.FloatingOffset="0 -20"
                                      Foreground="Black"
                                      BorderBrush="#c5c8cc"
                                      BorderThickness="0 0 0 1.5" Width="144"
-                                  Margin="10"
+                                 
+                                 TextChanged="txt_sender_national_code_TextChanged"
+                                 LostFocus="txt_sender_national_code_LostFocus"
                                      />
+                            <TextBlock Name="lbl_sender_national_code_warning" Text="empty!!!" Foreground="Red" Visibility="Hidden" />
+                        </StackPanel>
+                       
                     </StackPanel>
 
                     <StackPanel Margin="0 10" Orientation="Horizontal" HorizontalAlignment="Center">
@@ -61,7 +67,8 @@
                 TickFrequency="10"
                 IsSnapToTickEnabled="True"
                 Style="{StaticResource MaterialDesignSlider}"
-                Margin="20" Height="21" Width="156" />
+                Margin="20" Height="21" Width="156" 
+                                        ValueChanged="Slider1_ValueChanged"/>
                             </StackPanel>
                             <StackPanel IsEnabled="{Binding ElementName=SearchByPrice_Checkbox,Path=IsChecked}" Orientation="Horizontal">
                                 <TextBlock Text="{Binding ElementName=Slider2, Path=Value}" HorizontalAlignment="Center" Margin="7,0,0,0" />
@@ -72,7 +79,9 @@
                 TickFrequency="10"
                 IsSnapToTickEnabled="True"
                 Style="{StaticResource MaterialDesignSlider}"
-                Margin="20 -50" Height="21" Width="156" />
+                Margin="20 -50" Height="21" Width="156" 
+                ValueChanged="Slider2_ValueChanged"
+                                        />
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -89,7 +98,7 @@
                 TickFrequency="10"
                 IsSnapToTickEnabled="True"
                 Style="{StaticResource MaterialDesignSlider}"
-                Margin="20" Height="21" Width="156" />
+                Margin="20" Height="21" Width="156" ValueChanged="Slider3_ValueChanged"/>
                             </StackPanel>
                             <StackPanel IsEnabled="{Binding ElementName=SearchByWeight_Checkbox,Path=IsChecked}" Orientation="Horizontal">
                                 <TextBlock Text="{Binding ElementName=Slider4, Path=Value}" HorizontalAlignment="Center" Margin="7,0,0,0" />
@@ -100,7 +109,7 @@
                 TickFrequency="10"
                 IsSnapToTickEnabled="True"
                 Style="{StaticResource MaterialDesignSlider}"
-                Margin="20 -10" Height="21" Width="156" />
+                Margin="20 -10" Height="21" Width="156" ValueChanged="Slider4_ValueChanged" />
                             </StackPanel>
                         </StackPanel>
                     </Border>
@@ -116,12 +125,12 @@
                                 <ColumnDefinition/>
 
                             </Grid.ColumnDefinitions>
-                            <CheckBox Grid.Column="0" Content="Ordinary" />
-                            <CheckBox Margin="10" Grid.Column="2" Content="Swift" />
+                            <CheckBox Name="checkbox_ordinary" Grid.Column="0" Content="Ordinary" />
+                            <CheckBox Name="checkbox_swift" Margin="10" Grid.Column="2" Content="Swift" />
                         </Grid>
 
                    
-                    <Button Width="100" Margin="0 25"  Style="{StaticResource MaterialDesignFlatButton}">
+                    <Button Click="Button_Click" Width="100" Margin="0 25"  Style="{StaticResource MaterialDesignFlatButton}">
                        
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon
@@ -141,14 +150,14 @@
             </Border>
            
                 <Border Grid.Column="0" CornerRadius="20 0 0 20" Background="Yellow">
-                <materialDesign1:DataGrid Style="{StaticResource MaterialDesignDataGrid}"
+                <materialDesign1:DataGrid x:Name="datagrid1"  Style="{StaticResource MaterialDesignDataGrid}"
                         ItemsSource="{Binding YourList}">
                     <!-- Define the columns for your table -->
-                    <materialDesign1:DataGrid.Columns>
+                    <!--<materialDesign1:DataGrid.Columns>
                         <materialDesign:DataGridTextColumn Header="Column 1" Binding="{Binding Property1}" />
                         <materialDesign:DataGridTextColumn Header="Column 2" Binding="{Binding Property2}" />
-                        <!-- Add more columns as needed -->
-                    </materialDesign1:DataGrid.Columns>
+                        --><!-- Add more columns as needed --><!--
+                    </materialDesign1:DataGrid.Columns>-->
                 </materialDesign1:DataGrid>
             </Border>
 

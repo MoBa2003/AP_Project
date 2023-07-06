@@ -1,0 +1,3 @@
+id,sender_national_code,sender_address,receiver_address,content_type,has_expensive_object,weight,send_type,price,status,customer_comment,receiver_phone_number,
+5,0012345678,tbz,thr,document,True,2,swift,86,registered,,09024478861,
+4,0012345678,tbz,thr,document,True,1,swift,62,delivered,rgrgrgeg,,

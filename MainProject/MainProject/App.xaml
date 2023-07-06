@@ -4,7 +4,7 @@
              xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
            
              
-             StartupUri="EmployeePanel.xaml">
+             StartupUri="LoginForm.xaml">
     
     
     

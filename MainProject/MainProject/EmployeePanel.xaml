@@ -8,7 +8,8 @@
      Title="MainWindow" Height="650" Width="1000"
         WindowStartupLocation="CenterScreen" WindowStyle="None"
         Background="Transparent" AllowsTransparency="True"
-        ResizeMode="NoResize" FontFamily="Poppins">
+        ResizeMode="NoResize" FontFamily="Poppins"
+        Loaded="Window_Loaded">
 
     <!-- By Jeyderht 
         Subscribe: https://www.youtube.com/channel/UC9di50E_9m9pQcZPxzFqYUA/about
@@ -40,7 +41,7 @@
                             </Border.Background>
                         </Border>
 
-                        <Label Content="Poppins"
+                        <Label Name="lbl_name" Content="Poppins"
                                Foreground="{DynamicResource PrimaryTextColor}"
                                FontWeight="Bold"
                                FontSize="16"
@@ -106,7 +107,7 @@
                 <!-- Start: Button Close | Restore | Minimize -->
                 <StackPanel Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,5,10,0" Height="30" Orientation="Horizontal" FlowDirection="RightToLeft" Grid.RowSpan="2">
                     <Button x:Name="btnClose" Style="{StaticResource IconButtonsStyle}" Content="{DynamicResource close}" Click="btnClose_Click" Tag="IsCloseButton"/>
-                    <Button x:Name="btnRestore" Margin="5,0" Click="btnRestore_Click">
+                    <!--<Button x:Name="btnRestore" Margin="5,0" Click="btnRestore_Click">
                         <Button.Style>
                             <Style TargetType="{x:Type Button}" BasedOn="{StaticResource IconButtonsStyle}">
                                 <Setter Property="Content" Value="{DynamicResource maximize}"/>
@@ -117,7 +118,7 @@
                                 </Style.Triggers>
                             </Style>
                         </Button.Style>
-                    </Button>
+                    </Button>-->
                     <Button x:Name="btnMinimize" Style="{DynamicResource IconButtonsStyle}" Content="{DynamicResource minimize}" Click="btnMinimize_Click"/>
                 </StackPanel>
                 <!-- End: Button Close | Restore | Minimize -->
@@ -125,7 +126,8 @@
                 <Frame Grid.Row="1"
                        Name="fContainer"
                        Margin="20"
-                       NavigationUIVisibility="Hidden">
+                       NavigationUIVisibility="Hidden"
+                       Navigated="fContainer_Navigated">
 
                 </Frame>
 
