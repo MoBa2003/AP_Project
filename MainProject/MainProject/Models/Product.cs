@@ -9,28 +9,28 @@ namespace MainProject.Models
 {
     public enum ContentType
     {
-        Object,
-        Document,
-        Breakable
+        Object=0,
+        Document=1,
+        Breakable=2
     }
     public enum TypeOfDelivery
     {
-        Normal,
-        Swift
+        Ordinary=0,
+        Swift=1
     }
     public enum Status
     {
-        Registered,
-        Ready_To_Send,
-        Sending,
-        Delivered
+        Registered=0,
+        Ready_To_Send=1,
+        Sending=2,
+        Delivered=3
     }
     public class Product
     {
       
 
         public int? Id;
-        string Sender_National_code;
+       public string Sender_National_code;
         public string Sender_Address { get; set; }
         public string Receiver_address { get; set; }
         public ContentType ContentType;
@@ -48,6 +48,7 @@ namespace MainProject.Models
         public Product(int? id,string sender_national_code,string sender_address,string receiver_address , ContentType contenttype,bool has_expensive_object,double weight, TypeOfDelivery typeOfdelivery,double price, Status status,string? customer_comment, string? phonenumber = null)
         {
             this.Id = id;
+            this.Sender_National_code = sender_national_code;
             this.Sender_Address = sender_address;
 
             this.Receiver_address = receiver_address;

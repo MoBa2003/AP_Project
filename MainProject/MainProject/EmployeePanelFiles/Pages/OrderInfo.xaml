@@ -8,7 +8,8 @@
       
       
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800">
+      d:DesignHeight="600" d:DesignWidth="800"
+      Loaded="Page_Loaded">
 
     <Border CornerRadius="5" Background="{DynamicResource SecundaryBackgroundColor}">
         <StackPanel>
@@ -19,16 +20,24 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-
-                <TextBox Grid.Column="0" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                <StackPanel Grid.Column="0">
+                    <TextBox Name="txt_Id"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                                      materialDesign:HintAssist.Hint="ID: "
                                      materialDesign:HintAssist.FloatingOffset="0,-20"
                                      Foreground="White"
                                      BorderBrush="#c5c8cc"
                                      BorderThickness="0 0 0 1.5"
+                                      Width="134"
+                         HorizontalAlignment="Left"
+                         PreviewTextInput="txt_Id_PreviewTextInput"
+                         TextChanged="txt_Id_TextChanged"
+                                     LostFocus="txt_Id_LostFocus"
                                      />
+                    <TextBlock Name="lbl_id_warning" Text="empty!!!" Foreground="Red" Visibility="Hidden"></TextBlock>
+                </StackPanel>
+                
 
-                <Button Grid.Column="1" Width="100" Margin="-100 0 0 0"  Style="{StaticResource MaterialDesignFlatButton}">
+                <Button Name="btn_Search" VerticalAlignment="Top" Margin="139,5,140,0"  Style="{StaticResource MaterialDesignFlatButton}" Grid.ColumnSpan="2" Click="btn_Search_Click">
 
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon
@@ -36,7 +45,7 @@
             VerticalAlignment="Center"
             Margin="0,0,0,0"
             />
-                        <TextBlock Text="Search" VerticalAlignment="Center" Width="51"/>
+                        <TextBlock HorizontalAlignment="Left"  Text="Search" VerticalAlignment="Center" Width="51"/>
                     </StackPanel>
                 </Button>
 
@@ -45,13 +54,33 @@
 
 
 
-                <TextBox Grid.Column="2" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+
+            </Grid>
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+
+                </Grid.ColumnDefinitions>
+                <TextBox Name="txt_sender_national_code" Grid.Column="0" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                                      materialDesign:HintAssist.Hint="Sender National Code: "
                                      materialDesign:HintAssist.FloatingOffset="0,-20"
                                      Foreground="White"
                                      BorderBrush="#c5c8cc"
                                      BorderThickness="0 0 0 1.5"
+                         HorizontalAlignment="Left"
+                          Width="134"
                                      />
+                <TextBox Name="txt_receiver_phone_number"  Grid.Column="1" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                     materialDesign:HintAssist.Hint="Receiver Phone Number: "
+                                     materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     Foreground="White"
+                                     BorderBrush="#c5c8cc"
+                                     BorderThickness="0 0 0 1.5"
+                         HorizontalAlignment="Left"
+                         Width="134"
+                                     />
+
             </Grid>
             <Grid Margin="10">
                 <Grid.ColumnDefinitions>
@@ -64,7 +93,7 @@
 
                 <StackPanel Grid.Column="0"  Grid.ColumnSpan="2">
 
-                    <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                    <TextBox Name="txt_sender_address" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                                      materialDesign:HintAssist.Hint="Sender Address: "
                                      materialDesign:HintAssist.FloatingOffset="0,-20"
                                      Foreground="White"
@@ -72,7 +101,7 @@
                                      BorderThickness="0 0 0 1.5"
                                      
                                      />
-                    <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                    <TextBox Name="txt_receiver_address" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                                      materialDesign:HintAssist.Hint="Receiver Address: "
                                      Margin="0 30"
                                      materialDesign:HintAssist.FloatingOffset="0,-20"
@@ -80,49 +109,50 @@
                                      BorderBrush="#c5c8cc"
                                      BorderThickness="0 0 0 1.5"
                                      />
-                  
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                                     materialDesign:HintAssist.Hint="Weight: "
-                                     materialDesign:HintAssist.FloatingHintHorizontalAlignment="Center"
+
+                    <StackPanel>
+
+                        <TextBox Name="txt_weight"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                     materialDesign:HintAssist.Hint="Weight (kg): "
+                                     Width="134"
+                                 HorizontalAlignment="Left"
                                     
-                                     TextAlignment="Center"
+                                    
                                    
                                      materialDesign:HintAssist.FloatingOffset="0,-20"
                                      Foreground="White"
                                      BorderBrush="#c5c8cc"
                                      BorderThickness="0 0 0 1.5" Margin="0,0,97,0"
                                      />
-                            <CheckBox Grid.Column="1" HorizontalAlignment="Right" Content="is Expensive" Foreground="White" FontWeight="Bold" Width="115">
-                                <CheckBox.Style>
-                                    <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource MaterialDesignCheckBox}">
-                                        <Setter Property="FontSize" Value="16" />
-                                        <Setter Property="Margin" Value="10" />
-                                    </Style>
-                                </CheckBox.Style>
-                            </CheckBox>
-                        </Grid>
 
+                        <CheckBox Margin="0 40 0 0" Name="checkbox_has_expensive_object"  HorizontalAlignment="Left" Content="is Expensive" Foreground="White" FontWeight="Bold" Width="115">
+                            <CheckBox.Style>
+                                <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource MaterialDesignCheckBox}">
+                                    <Setter Property="FontSize" Value="16" />
+                                    <Setter Property="Margin" Value="10" />
+                                </Style>
+                            </CheckBox.Style>
+                        </CheckBox>
+                    </StackPanel>
                        
-              
+                       
+                  
+
+                      
+                 
 
 
                 </StackPanel>
                 <StackPanel Grid.Column="2" Grid.ColumnSpan="2" Margin="10">
 
-                    <ComboBox  Grid.Row="0" Style="{StaticResource MaterialDesignOutlinedComboBox}" VerticalAlignment="Center" materialDesign:HintAssist.Hint="Content Type :" Background="{DynamicResource SecundaryBackgroundColor}" Foreground="White">
-                        <ComboBoxItem Foreground="Black"  Content="Aliefffffffffffffffffffffffffffffffff" />
-                        <ComboBoxItem Foreground="Black"  Content="B" />
-                        <ComboBoxItem Foreground="Black"  Content="C" />
+                    <ComboBox Name="combo_contenttype"  Grid.Row="0" Style="{StaticResource MaterialDesignOutlinedComboBox}" VerticalAlignment="Center" materialDesign:HintAssist.Hint="Content Type :" Background="{DynamicResource SecundaryBackgroundColor}" Foreground="White">
+                        <ComboBoxItem Name="item_object" Foreground="Black"  Content="Object" />
+                        <ComboBoxItem Name="item_document" Foreground="Black"  Content="Document" />
+                        <ComboBoxItem Name="item_breakable" Foreground="Black"  Content="Breakable" />
                     </ComboBox>
-                    <ComboBox Margin="0 20" Style="{StaticResource MaterialDesignOutlinedComboBox}" materialDesign:HintAssist.Hint="Content Type :" Background="{DynamicResource SecundaryBackgroundColor}" Foreground="White" >
-                        <ComboBoxItem Foreground="Black"  Content="Aliefffffffffffffffffffffffffffffffff" />
-                        <ComboBoxItem Foreground="Black"  Content="B" />
-                        <ComboBoxItem Foreground="Black"  Content="C" />
+                    <ComboBox Name="combo_typeofdelivery" Margin="0 20" Style="{StaticResource MaterialDesignOutlinedComboBox}" materialDesign:HintAssist.Hint="Delivery Type :" Background="{DynamicResource SecundaryBackgroundColor}" Foreground="White" >
+                        <ComboBoxItem Foreground="Black"  Content="Ordinary" />
+                        <ComboBoxItem Foreground="Black"  Content="Swift" />
                     </ComboBox>
 
 
@@ -132,6 +162,11 @@
 
 
             </Grid>
+
+            <Grid Margin="10">
+                <Separator></Separator>
+            </Grid>
+
             <Grid Margin="10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -139,7 +174,7 @@
                 </Grid.ColumnDefinitions>
 
 
-                <Grid Grid.Column="0">
+                <Grid Grid.Column="0" Margin="0 -20">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
@@ -147,20 +182,19 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <Label Grid.Row="0" FontSize="20" Content="Status : "></Label>
-                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <Label Foreground="White" Grid.Row="0" FontSize="20" Content="Status : "></Label>
+                    <StackPanel Margin="0 -40 0 -40" Grid.Row="1" Orientation="Horizontal">
 
-                        <RadioButton Margin="20" Content="Submitted" GroupName="Options"   />
-                        <RadioButton Margin="20 0" Content="Ready to Send" GroupName="Options"  />
+                        <RadioButton Foreground="White" Name="radio_Registered" Margin="20" Content="Registered" GroupName="Options"   />
+                        <RadioButton Foreground="White" Name="radio_ReadytoSend" Margin="20 0" Content="Ready to Send" GroupName="Options"  />
 
 
                     </StackPanel>
                     <StackPanel Grid.Row="2" Orientation="Horizontal">
-                        <RadioButton Margin="20 0" Content="Sending" GroupName="Options"  />
-                        <RadioButton Margin="32 0" Content="Delivered" GroupName="Options"  />
+                        <RadioButton Foreground="White" Name="radio_Sending" Margin="20 0" Content="Sending" GroupName="Options"  />
+                        <RadioButton Foreground="White" Name="radio_Delivered" Margin="32 0" Content="Delivered" GroupName="Options"  />
                     </StackPanel>
 
-                    <Button Grid.Row="3" Content="Update" RenderTransformOrigin="0.144,-1.452" Margin="10,10,10,0"/>
 
 
                 </Grid>
@@ -173,15 +207,13 @@
 
 
                 <Grid Grid.Column="1">
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
+                   
 
-                        <RowDefinition/>
-                    </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Content="Customer Cumment" Margin="0,10,0,10"></Label>
-                    <TextBlock Grid.Row="1" Grid.RowSpan="2" Background="White" Margin="0,0,0,-22" ></TextBlock>
-
+                    <StackPanel Margin="0 -30 0 0">
+                        <Label Foreground="White"  Content="Customer Cumment" Margin="0,10,0,10"></Label>
+                        <TextBox Name="txt_Customer_comment" Background="White" Height="77"/>
+                    </StackPanel>
+                 
                 </Grid>
 
 
@@ -189,7 +221,14 @@
 
             </Grid>
 
+            <Grid Margin="10 -10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
 
+                </Grid.ColumnDefinitions>
+                <Button Name="btn_update"   Content="Update" Click="btn_update_Click"/>
+            </Grid>
 
 
             <!--<Grid Margin="10">

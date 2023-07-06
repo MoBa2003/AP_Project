@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace CustomMessageBox
 {
@@ -19,6 +22,13 @@ namespace CustomMessageBox
     /// </summary>
     public partial class MessageBoxCustom : Window
     {
+       public bool btnok_Clicked = false;
+       public bool btncancel_clicked = false;
+       public bool btnyes_clicked = false;
+
+       public bool isSuccessfultransaction=false;
+
+
         public MessageBoxCustom(string Message, MessageType Type, MessageButtons Buttons)
         {
             InitializeComponent();
@@ -66,6 +76,10 @@ namespace CustomMessageBox
                     btnCancel.Visibility = Visibility.Collapsed;
                     btnYes.Visibility = Visibility.Collapsed; btnNo.Visibility = Visibility.Collapsed;
                     break;
+                case MessageButtons.RegisterCancel:
+                    btnYes.Visibility = Visibility.Collapsed; btnNo.Visibility = Visibility.Collapsed;
+                    btnOk.Content = "Register";
+                    break;
             }
         }
         public void changeBackgroundThemeColor(Color newColor)
@@ -80,6 +94,8 @@ namespace CustomMessageBox
         }
         private void btnYes_Click(object sender, RoutedEventArgs e)
         {
+            btnyes_clicked = true;
+
             this.DialogResult = true;
             this.Close();
         }
@@ -87,12 +103,14 @@ namespace CustomMessageBox
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = false;
+            btncancel_clicked = true;
             this.Close();
         }
 
         private void btnOk_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
+            btnok_Clicked = true;
             this.Close();
         }
 
@@ -106,6 +124,14 @@ namespace CustomMessageBox
         {
             this.DialogResult = false;
             this.Close();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (isSuccessfultransaction)
+            {
+                txtTitle.Text = "Successful Transaction";
+            }
         }
     }
     public enum MessageType
@@ -121,5 +147,6 @@ namespace CustomMessageBox
         OkCancel,
         YesNo,
         Ok,
+        RegisterCancel
     }
 }

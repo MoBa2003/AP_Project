@@ -24,6 +24,21 @@ namespace MainProject.Models
 
         public string? Password;
 
+        public Customer(int? id, string national_Code, string firstName, string lastName, string email, string phoneNumber, double wallet, string? userName, string? password)
+        {
+            Id = id;
+            National_Code = national_Code;
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            PhoneNumber = phoneNumber;
+            Wallet = wallet;
+            UserName = userName;
+            Password = password;
+        }
+
+
+
         //public static Customer GetCustomer(string id)
         //{
         //    return customers.First(x => x.ID == id); // Exception if not found : InvalidOperationException
@@ -42,7 +57,7 @@ namespace MainProject.Models
 
         //Write a Code to generate the username and pass
 
-       
+
 
     }
 }

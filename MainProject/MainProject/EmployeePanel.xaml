@@ -8,7 +8,8 @@
      Title="MainWindow" Height="650" Width="1000"
         WindowStartupLocation="CenterScreen" WindowStyle="None"
         Background="Transparent" AllowsTransparency="True"
-        ResizeMode="NoResize" FontFamily="Poppins">
+        ResizeMode="NoResize" FontFamily="Poppins"
+        Loaded="Window_Loaded">
 
     <!-- By Jeyderht 
         Subscribe: https://www.youtube.com/channel/UC9di50E_9m9pQcZPxzFqYUA/about
@@ -40,7 +41,7 @@
                             </Border.Background>
                         </Border>
 
-                        <Label Content="Poppins"
+                        <Label Name="lbl_name" Content="Poppins"
                                Foreground="{DynamicResource PrimaryTextColor}"
                                FontWeight="Bold"
                                FontSize="16"
@@ -125,7 +126,8 @@
                 <Frame Grid.Row="1"
                        Name="fContainer"
                        Margin="20"
-                       NavigationUIVisibility="Hidden">
+                       NavigationUIVisibility="Hidden"
+                       Navigated="fContainer_Navigated">
 
                 </Frame>
 

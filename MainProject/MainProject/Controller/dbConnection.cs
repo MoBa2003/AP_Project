@@ -11,7 +11,7 @@ namespace MainProject.Controller
     {
         //const string ConnectionString = "server=localhost;port=5432;database=OrderSwift_DB;Username=Postgres;password=1651382@Msh2003";
        //const string ConnectionString = "Host=localhost;Username=iugy;Password=1651382@Msh2003;Database=OrderSwift_DB";
-      const  string ConnectionString = "Server=localhost;Port=5432;Database=OrderSwift_DB;User Id=postgres;Password=Mypass;";
+      const  string ConnectionString = "Server=localhost;Port=5432;Database=OrderSwift_DB;User Id=postgres;Password=1651382@Msh2003;";
         NpgsqlConnection Tunnel;
         NpgsqlCommand Command;
 

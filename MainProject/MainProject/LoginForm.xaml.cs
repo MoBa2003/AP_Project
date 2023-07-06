@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using MainProject.Controller;
 using MainProject.Models;
 using Npgsql;
+using CustomMessageBox;
 
 namespace MainProject
 {
@@ -46,16 +47,32 @@ namespace MainProject
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
 
-            if (txtUser.Text == "")
+           
+
+            Employee employee = dbFunctions.getEmployeeByUsernamePassword(txtUser.Text, txtPass.Password);
+            if (employee == null)
             {
-               
-            }
-            if (txtPass.Password == "")
-            {
+                Customer customer =dbFunctions.getCustomerByUsernamePassword(txtUser.Text, txtPass.Password);
+                if (customer == null)
+                {
+                    new MessageBoxCustom("We don`t have such user in our db", MessageType.Error, MessageButtons.Ok).ShowDialog();
+                }
+                else
+                {
+                    CustomerPanel customerpanel = new CustomerPanel();
+                    customerpanel.getCustomer(customer);
+                    customerpanel.Show();
+                    this.Close();
+                }
 
             }
-
-            //Employee em = dbFunctions.getEmployeeByUsernamePassword(txtUser.Text, txtPass.Password);
+            else
+            {
+                EmployeePanel employeepanel = new EmployeePanel();
+                employeepanel.getemployee(employee);
+                employeepanel.Show();
+                this.Close();
+            }
             //MessageBox.Show(em.Email);
 
             //dbConnection connection = new dbConnection();
@@ -72,6 +89,26 @@ namespace MainProject
             SignUp_Employee window = new SignUp_Employee();
             window.Show();
             this.Close();
+        }
+
+        private void txtUser_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtUser.Text == "") btnLogin.IsEnabled = false;
+            else
+            {
+                if (txtPass.Password != "") btnLogin.IsEnabled = true;
+            }
+        }
+
+      
+
+        private void txtPass_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (txtPass.Password == "") btnLogin.IsEnabled = false;
+            else
+            {
+                if (txtUser.Text != "") btnLogin.IsEnabled = true;
+            }
         }
     }
 }

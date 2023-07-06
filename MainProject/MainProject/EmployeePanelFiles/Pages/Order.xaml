@@ -15,16 +15,45 @@
         <StackPanel>
             <Grid Margin="10 10">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.2*"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                <StackPanel>
+                    <TextBox Name="txt_sender_nationalcode" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                                      materialDesign:HintAssist.Hint="Sender National Code: "
                                      materialDesign:HintAssist.FloatingOffset="0,-20"
                                      Foreground="White"
                                      BorderBrush="#c5c8cc"
                                      BorderThickness="0 0 0 1.5"
+                             Width="134"
+                             HorizontalAlignment="Left"
+                             TextChanged="txt_sender_nationalcode_TextChanged"
+                             LostFocus="txt_sender_nationalcode_LostFocus"
+                             PreviewTextInput="txt_sender_nationalcode_PreviewTextInput"/>
+                    <TextBlock Name="lbl_senderNationalCode_warning" Text="empty!!!" Foreground="Red" Visibility="Hidden">
+
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Column="2">
+                    <TextBox Name="txt_receiver_phonenumber" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                     materialDesign:HintAssist.Hint="Receiver phone number: "
+                                     materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     Foreground="White"
+                                     BorderBrush="#c5c8cc"
+                                     BorderThickness="0 0 0 1.5"
+                                     Width="134"
+                                      HorizontalAlignment="Left"
+                                      TextChanged="txt_receiver_phonenumber_TextChanged"
+                                      LostFocus="txt_receiver_phonenumber_LostFocus"
+                                      PreviewTextInput="txt_receiver_phonenumber_PreviewTextInput"
                                      />
+                    <TextBlock Name="lbl_receiverPhonenumber_warning"  Foreground="Red" Visibility="Hidden" Text="invalid phone number">
+
+                    </TextBlock>
+                </StackPanel>
+                
             </Grid>
             <Grid Margin="10">
                 <Grid.ColumnDefinitions>
@@ -37,49 +66,82 @@
 
                 <StackPanel Grid.Column="0"  Grid.ColumnSpan="2">
 
-                    <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                    <StackPanel>
+                        <TextBox Name="txt_sender_address"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                                      materialDesign:HintAssist.Hint="Sender Address: "
                                      materialDesign:HintAssist.FloatingOffset="0,-20"
                                      Foreground="White"
                                      BorderBrush="#c5c8cc"
                                      BorderThickness="0 0 0 1.5"
+                                     HorizontalAlignment="Left" Width="390"
+                                     TextChanged="txt_sender_address_TextChanged"
+                                     LostFocus="txt_sender_address_LostFocus"
                                      
                                      />
-                    <TextBox Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                        <TextBlock Name="lbl_sender_address_warning" Text="empty!!!" Foreground="Red" Visibility="Hidden"></TextBlock>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBox Name="txt_receiver_address" Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
                                      materialDesign:HintAssist.Hint="Receiver Address: "
-                                     Margin="0 30"
+                                     Margin="0 30 0 0"
                                      materialDesign:HintAssist.FloatingOffset="0,-20"
                                      Foreground="White"
                                      BorderBrush="#c5c8cc"
                                      BorderThickness="0 0 0 1.5"
+                                     HorizontalAlignment="Left"
+                                    Width="390"
+                                   TextChanged="txt_receiver_address_TextChanged"
+                                 LostFocus="txt_receiver_address_LostFocus"
+                                 
                                      />
-                    <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                                     materialDesign:HintAssist.Hint="Weight: "
-                                     materialDesign:HintAssist.FloatingHintHorizontalAlignment="Center"
+                        <TextBlock Name="lbl_receiver_address_warning" Text="empty!!!" Foreground="Red" Visibility="Hidden"></TextBlock>
+
+
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBox Name="txt_weight"  Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                                     materialDesign:HintAssist.Hint="Weight (kg): "
+                                    HorizontalAlignment="Left"
                               
-                                     TextAlignment="Center"
-                                    Margin="-20 5"
+                                    
+                                    
                                      materialDesign:HintAssist.FloatingOffset="0,-20"
+                                     Margin="0 30 0 0"
                                      Foreground="White"
                                      BorderBrush="#c5c8cc"
-                                     BorderThickness="0 0 0 1.5" Width="116" RenderTransformOrigin="-0.273,0.498" 
+                                     BorderThickness="0 0 0 1.5" Width="134" 
+                                 TextChanged="txt_weight_TextChanged"
+                                 LostFocus="txt_weight_LostFocus"
+                                
                                      />
+                        <TextBlock Name="lbl_weight_warning" Text="empty!!!" Foreground="Red" Visibility="Hidden">
+                            
+                        </TextBlock>
+                    </StackPanel>
+                   
 
 
 
                 </StackPanel>
                 <StackPanel Grid.Column="2" Grid.ColumnSpan="2" Margin="10">
-
-                    <ComboBox  Grid.Row="0" Style="{StaticResource MaterialDesignOutlinedComboBox}" VerticalAlignment="Center" materialDesign:HintAssist.Hint="Content Type :" Background="{DynamicResource SecundaryBackgroundColor}" Foreground="White">
-                        <ComboBoxItem Foreground="Black"  Content="Aliefffffffffffffffffffffffffffffffff" />
-                        <ComboBoxItem Foreground="Black"  Content="B" />
-                        <ComboBoxItem Foreground="Black"  Content="C" />
-                    </ComboBox>
-                    <ComboBox Margin="0 20" Style="{StaticResource MaterialDesignOutlinedComboBox}" materialDesign:HintAssist.Hint="Content Type :" Background="{DynamicResource SecundaryBackgroundColor}" Foreground="White" >
-                        <ComboBoxItem Foreground="Black"  Content="Aliefffffffffffffffffffffffffffffffff" />
-                        <ComboBoxItem Foreground="Black"  Content="B" />
-                        <ComboBoxItem Foreground="Black"  Content="C" />
-                    </ComboBox>
+                    <StackPanel>
+                        <ComboBox SelectionChanged="combo_contenttype_SelectionChanged" Name="combo_contenttype"  Grid.Row="0" Style="{StaticResource MaterialDesignOutlinedComboBox}" VerticalAlignment="Center" materialDesign:HintAssist.Hint="Content Type :" Background="{DynamicResource SecundaryBackgroundColor}" Foreground="White">
+                            <ComboBoxItem Name="item_object" Foreground="Black"  Content="Object" />
+                            <ComboBoxItem Name="item_document" Foreground="Black"  Content="Document" />
+                            <ComboBoxItem Name="item_breakable" Foreground="Black"  Content="Breakable" />
+                        </ComboBox>
+                        <TextBlock Visibility="Hidden" Name="lbl_contenttype_warning" Foreground="red" Text="no item selected!!!"></TextBlock>
+                    </StackPanel>
+                    <StackPanel>
+                        <ComboBox SelectionChanged="combo_typeofdelivery_SelectionChanged" Name="combo_typeofdelivery" Margin="0 20 0 0" Style="{StaticResource MaterialDesignOutlinedComboBox}" materialDesign:HintAssist.Hint="Type of Delivery :" Background="{DynamicResource SecundaryBackgroundColor}" Foreground="White" >
+                            <ComboBoxItem Foreground="Black"  Content="Ordinary" />
+                            <ComboBoxItem Foreground="Black"  Content="Swift" />
+                        </ComboBox>
+                        <TextBlock Visibility="Hidden" Name="lbl_typeofdelivery_warning" Foreground="red" Text="no item selected!!!"></TextBlock>
+                    </StackPanel>
+                     
+                 
+                    
 
 
                 </StackPanel>
@@ -95,15 +157,19 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel>
-                    <CheckBox Grid.Column="1" Margin="10" Content="is Expensive" Foreground="White" FontWeight="Bold">
-                        <CheckBox.Style>
-                            <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource MaterialDesignCheckBox}">
-                                <Setter Property="FontSize" Value="16" />
-                                <Setter Property="Margin" Value="10" />
-                            </Style>
-                        </CheckBox.Style>
-                    </CheckBox>
-                    <Button Content="Submit" Width="345" RenderTransformOrigin="0.144,-1.452" Height="36"  Margin="0 30 0 0"/>
+                    <StackPanel>
+                        <CheckBox Name="checkbox_has_expensive_object" Grid.Column="1" Margin="10" Content="Has Expensive Object" Foreground="White" FontWeight="Bold">
+                            <CheckBox.Style>
+                                <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource MaterialDesignCheckBox}">
+                                    <Setter Property="FontSize" Value="16" />
+                                    <Setter Property="Margin" Value="10" />
+                                </Style>
+                            </CheckBox.Style>
+                        </CheckBox>
+                       
+                    </StackPanel>
+                    
+                    <Button Click="Button_Click" Content="Submit" Width="345" RenderTransformOrigin="0.144,-1.452" Height="36"  Margin="0 30 0 0"/>
 
                 </StackPanel>
                 <materialDesign:PackIcon Kind="Send"

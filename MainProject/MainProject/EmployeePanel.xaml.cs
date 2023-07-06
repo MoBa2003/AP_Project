@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MainProject.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MainProject.Models;
+using WPFModernVerticalMenu.Pages;
 
 namespace MainProject
 {
@@ -20,10 +23,12 @@ namespace MainProject
     /// </summary>
     public partial class EmployeePanel : Window
     {
+        Employee ActiveEmployee;
         public EmployeePanel()
         {
             InitializeComponent();
         }
+
         private void BG_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Tg_Btn.IsChecked = false;
@@ -75,6 +80,11 @@ namespace MainProject
             }
         }
 
+        internal void getemployee(Employee employee)
+        {
+            ActiveEmployee = employee;
+        }
+
         private void btn_advanced_Search_MouseLeave(object sender, MouseEventArgs e)
         {
             Popup.Visibility = Visibility.Collapsed;
@@ -110,6 +120,8 @@ namespace MainProject
         
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
+            LoginForm lg = new LoginForm();
+            lg.Show();
             Close();
         }
 
@@ -139,14 +151,27 @@ namespace MainProject
         private void btn_advanced_Search_Click(object sender, RoutedEventArgs e)
         {
             fContainer.Navigate(new System.Uri("EmployeePanelFiles/Pages/AdvancedSearch.xaml", UriKind.RelativeOrAbsolute));
+            
         }
         private void btn_order_info_Click(object sender, RoutedEventArgs e)
         {
             fContainer.Navigate(new System.Uri("EmployeePanelFiles/Pages/OrderInfo.xaml", UriKind.RelativeOrAbsolute));
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            lbl_name.Content = ActiveEmployee.FirstName + " " + ActiveEmployee.LastName;
+        }
 
-
-
+        private void fContainer_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+            if(e.Content is MainProject.EmployeePanelFiles.Pages.AdvancedSearch advancedsearch){
+                advancedsearch.isEmployee = true;
+            }
+           else if(e.Content is MainProject.EmployeePanelFiles.Pages.OrderInfo orderinfo)
+            {
+                orderinfo.IsEmployee = true;
+            }
+        }
     }
 }
