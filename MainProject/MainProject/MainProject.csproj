@@ -35,10 +35,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\pexels-hasan-albari-1229861.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="CsvHelper" Version="30.0.1" />
     <PackageReference Include="iTextSharp" Version="5.5.13.3" />
     <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
@@ -48,8 +44,6 @@
   <ItemGroup>
     <Resource Include="Images\back-image.jpg" />
     <Resource Include="Images\key-icon.png" />
-    <Resource Include="Images\logo.png" />
-    <Resource Include="Images\pexels-karolina-grabowska-5624981.jpg" />
     <Resource Include="Images\user-icon.png" />
   </ItemGroup>
 
