@@ -78,7 +78,9 @@ Before you begin, ensure you have the following installed on your machine:
    - Press `F5` or click the **Start** button to compile and launch the application.
 
 ## 📸 Screenshots
-*(Coming Soon - Add screenshots of your beautiful UI here: Customer Registration, Order Panel, Report Generation)*
+<img width="1196" height="823" alt="image" src="https://github.com/user-attachments/assets/58d7decc-b014-4510-a4f9-ea098a6b095d" />
+
+
 
 ## 🤝 Team Members
 - Mohammad Mahdi SharafBayani
